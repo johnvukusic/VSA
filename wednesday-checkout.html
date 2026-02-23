@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configure &amp; Checkout — watsonx.data | IBM Commerce</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cds-background: #ffffff;
+  --cds-background-hover: #e8e8e8;
+  --cds-layer-01: #f4f4f4;
+  --cds-layer-02: #ffffff;
+  --cds-layer-hover-01: #e8e8e8;
+  --cds-field-01: #f4f4f4;
+  --cds-border-subtle-00: #e0e0e0;
+  --cds-border-subtle-01: #c6c6c6;
+  --cds-border-strong-01: #8d8d8d;
+  --cds-border-interactive: #0f62fe;
+  --cds-text-primary: #161616;
+  --cds-text-secondary: #525252;
+  --cds-text-placeholder: #a8a8a8;
+  --cds-text-on-color: #ffffff;
+  --cds-text-helper: #6f6f6f;
+  --cds-link-primary: #0f62fe;
+  --cds-link-primary-hover: #0043ce;
+  --cds-icon-primary: #161616;
+  --cds-icon-secondary: #525252;
+  --cds-support-success: #198038;
+  --cds-support-info: #0043ce;
+  --cds-support-warning: #f1c21b;
+  --cds-support-error: #da1e28;
+  --cds-button-primary: #0f62fe;
+  --cds-button-primary-hover: #0353e9;
+  --cds-button-secondary: #393939;
+  --cds-button-tertiary: #0f62fe;
+  --cds-focus: #0f62fe;
+  --cds-tag-blue: #d0e2ff;
+  --cds-tag-green: #a7f0ba;
+  --cds-tag-purple: #e8daff;
+  --cds-tag-teal: #9ef0f0;
+  --cds-tag-warm-gray: #e0e0e0;
+  --cds-spacing-01: 0.125rem;
+  --cds-spacing-02: 0.25rem;
+  --cds-spacing-03: 0.5rem;
+  --cds-spacing-04: 0.75rem;
+  --cds-spacing-05: 1rem;
+  --cds-spacing-06: 1.5rem;
+  --cds-spacing-07: 2rem;
+  --cds-spacing-08: 2.5rem;
+  --cds-spacing-09: 3rem;
+  --cds-spacing-10: 4rem;
+  --cds-heading-06: 2rem;
+  --cds-heading-05: 1.75rem;
+  --cds-heading-04: 1.5rem;
+  --cds-heading-03: 1.25rem;
+  --cds-heading-02: 1rem;
+  --cds-heading-01: 0.875rem;
+  --cds-body-02: 1rem;
+  --cds-body-01: 0.875rem;
+  --cds-label-01: 0.75rem;
+  --cds-helper-01: 0.75rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--cds-text-primary);
+  background: #f4f4f4;
+  font-size: var(--cds-body-01);
+  line-height: 1.42857;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cds-grid { max-width: 99rem; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 672px) { .cds-grid { padding: 0 2rem; } }
+@media (min-width: 1056px) { .cds-grid { padding: 0 2.5rem; } }
+
+/* ========== MASTHEAD ========== */
+.ibm-masthead { background: #161616; height: 48px; display: flex; align-items: center; padding: 0 1rem; position: sticky; top: 0; z-index: 9000; }
+.ibm-logo svg { fill: white; width: 44px; height: 16px; }
+.masthead-nav { display: flex; align-items: center; height: 100%; margin-left: var(--cds-spacing-07); }
+.masthead-nav a { color: #c6c6c6; text-decoration: none; font-size: var(--cds-body-01); padding: 0 var(--cds-spacing-05); height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.11s; }
+.masthead-nav a:hover { color: #fff; background: #353535; }
+.masthead-nav a.active { color: #fff; border-bottom-color: var(--cds-button-primary); }
+.masthead-right { margin-left: auto; display: flex; align-items: center; gap: var(--cds-spacing-05); }
+.icon-btn { background: none; border: none; color: #c6c6c6; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.icon-btn:hover { background: #353535; color: #fff; }
+
+/* ========== PROGRESS INDICATOR ========== */
+.progress-indicator { background: var(--cds-background); border-bottom: 1px solid var(--cds-border-subtle-00); padding: var(--cds-spacing-05) 0; }
+.progress-steps { display: flex; max-width: 800px; margin: 0 auto; }
+.progress-step { flex: 1; display: flex; align-items: center; gap: var(--cds-spacing-03); padding: 0 var(--cds-spacing-05); position: relative; }
+.progress-step::after { content: ''; position: absolute; right: 0; top: 50%; width: 100%; height: 1px; background: var(--cds-border-subtle-01); z-index: 0; }
+.progress-step:last-child::after { display: none; }
+.step-number { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--cds-border-subtle-01); display: flex; align-items: center; justify-content: center; font-size: var(--cds-label-01); font-weight: 600; color: var(--cds-text-secondary); background: var(--cds-background); position: relative; z-index: 1; flex-shrink: 0; }
+.step-label { font-size: var(--cds-label-01); color: var(--cds-text-secondary); white-space: nowrap; }
+.progress-step.active .step-number { background: var(--cds-button-primary); border-color: var(--cds-button-primary); color: white; }
+.progress-step.active .step-label { color: var(--cds-text-primary); font-weight: 600; }
+.progress-step.complete .step-number { background: var(--cds-support-success); border-color: var(--cds-support-success); color: white; }
+.progress-step.complete .step-label { color: var(--cds-text-secondary); }
+@media (max-width: 672px) { .step-label { display: none; } .progress-step { justify-content: center; } }
+
+/* ========== PAGE HEADER ========== */
+.page-header { padding: var(--cds-spacing-07) 0 var(--cds-spacing-05); }
+.page-header h1 { font-size: var(--cds-heading-05); font-weight: 300; margin-bottom: var(--cds-spacing-02); }
+.page-header p { font-size: var(--cds-body-01); color: var(--cds-text-secondary); }
+
+/* ========== CONFIG LAYOUT ========== */
+.config-layout { display: grid; grid-template-columns: 1fr 380px; gap: var(--cds-spacing-06); padding-bottom: var(--cds-spacing-10); align-items: start; }
+@media (max-width: 1055px) { .config-layout { grid-template-columns: 1fr; } }
+
+/* ========== CONFIG PANELS ========== */
+.config-panel { background: var(--cds-background); margin-bottom: var(--cds-spacing-05); }
+.config-panel-header { padding: var(--cds-spacing-05) var(--cds-spacing-06); border-bottom: 1px solid var(--cds-border-subtle-00); display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+.config-panel-header:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.config-panel-header h3 { font-size: var(--cds-heading-02); font-weight: 600; display: flex; align-items: center; gap: var(--cds-spacing-03); }
+.config-panel-header .step-num { font-size: var(--cds-label-01); background: var(--cds-button-primary); color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.config-panel-header svg { width: 16px; height: 16px; fill: var(--cds-icon-secondary); transition: transform 0.15s; }
+.config-panel.open .config-panel-header svg { transform: rotate(180deg); }
+.config-panel-body { padding: var(--cds-spacing-06); display: none; }
+.config-panel.open .config-panel-body { display: block; }
+
+/* Radio Tiles */
+.radio-tile-group { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cds-border-subtle-00); }
+@media (max-width: 672px) { .radio-tile-group { grid-template-columns: 1fr; } }
+.radio-tile { background: var(--cds-background); padding: var(--cds-spacing-05); cursor: pointer; border: 2px solid transparent; transition: all 0.11s; position: relative; }
+.radio-tile:hover { background: var(--cds-layer-hover-01); }
+.radio-tile:focus-within { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.radio-tile.selected { border-color: var(--cds-border-interactive); background: #edf5ff; }
+.radio-tile input { position: absolute; opacity: 0; pointer-events: none; }
+.radio-tile .tile-name { font-size: var(--cds-heading-02); font-weight: 600; margin-bottom: var(--cds-spacing-02); }
+.radio-tile .tile-price { font-size: var(--cds-body-01); font-family: 'IBM Plex Mono', monospace; margin-bottom: var(--cds-spacing-02); }
+.radio-tile .tile-desc { font-size: var(--cds-label-01); color: var(--cds-text-secondary); }
+.radio-tile .tile-badge { position: absolute; top: var(--cds-spacing-03); right: var(--cds-spacing-03); background: var(--cds-button-primary); color: white; font-size: 10px; padding: 1px 6px; }
+
+/* Form fields */
+.form-group { margin-bottom: var(--cds-spacing-06); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cds-spacing-05); }
+@media (max-width: 672px) { .form-row { grid-template-columns: 1fr; } }
+.form-label { display: block; font-size: var(--cds-label-01); color: var(--cds-text-secondary); margin-bottom: var(--cds-spacing-02); }
+.form-input { width: 100%; height: 40px; background: var(--cds-field-01); border: none; border-bottom: 1px solid var(--cds-border-strong-01); padding: 0 var(--cds-spacing-05); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); color: var(--cds-text-primary); }
+.form-input:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; border-bottom-color: var(--cds-border-interactive); }
+.form-input.mono { font-family: 'IBM Plex Mono', monospace; }
+.form-input[aria-invalid="true"] { border-bottom: 2px solid var(--cds-support-error); }
+.form-error { font-size: var(--cds-label-01); color: var(--cds-support-error); margin-top: var(--cds-spacing-02); display: none; }
+.form-error.visible { display: block; }
+.form-helper { font-size: var(--cds-helper-01); color: var(--cds-text-helper); margin-top: var(--cds-spacing-02); }
+
+/* Number Input */
+.number-input { display: flex; align-items: center; }
+.number-input button { width: 40px; height: 40px; background: var(--cds-field-01); border: none; border-bottom: 1px solid var(--cds-border-strong-01); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--cds-icon-primary); }
+.number-input button:hover { background: var(--cds-background-hover); }
+.number-input button:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.number-input input { width: 64px; height: 40px; text-align: center; background: var(--cds-field-01); border: none; border-bottom: 1px solid var(--cds-border-strong-01); font-family: 'IBM Plex Mono', monospace; font-size: var(--cds-body-01); color: var(--cds-text-primary); }
+.number-input input:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+
+/* Toggle */
+.cds-toggle { display: flex; align-items: center; gap: var(--cds-spacing-03); cursor: pointer; font-size: var(--cds-body-01); padding: var(--cds-spacing-03) 0; }
+.toggle-track { width: 48px; height: 24px; background: var(--cds-border-strong-01); border-radius: 12px; position: relative; transition: background 0.15s; flex-shrink: 0; }
+.toggle-track.on { background: var(--cds-support-success); }
+.toggle-track::after { content: ''; width: 18px; height: 18px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: left 0.15s; }
+.toggle-track.on::after { left: 27px; }
+.toggle-price { font-size: var(--cds-label-01); color: var(--cds-text-helper); font-family: 'IBM Plex Mono', monospace; margin-left: auto; }
+
+/* Commitment Banner */
+.commitment-banner { padding: var(--cds-spacing-05); margin-bottom: var(--cds-spacing-06); display: flex; align-items: center; gap: var(--cds-spacing-04); font-size: var(--cds-body-01); }
+.commitment-banner.monthly { background: #edf5ff; border-left: 3px solid var(--cds-support-info); }
+.commitment-banner.annual { background: #defbe6; border-left: 3px solid var(--cds-support-success); }
+.commitment-banner svg { width: 20px; height: 20px; flex-shrink: 0; }
+.commitment-banner.monthly svg { fill: var(--cds-support-info); }
+.commitment-banner.annual svg { fill: var(--cds-support-success); }
+.commitment-banner strong { font-weight: 600; }
+
+/* ========== LIVE PRICING SUMMARY (Sticky Right Rail) ========== */
+.order-summary { background: var(--cds-background); position: sticky; top: 64px; }
+@media (max-width: 1055px) { .order-summary { position: static; } }
+.order-summary-header { background: var(--cds-text-primary); color: white; padding: var(--cds-spacing-05) var(--cds-spacing-06); }
+.order-summary-header h3 { font-size: var(--cds-heading-02); font-weight: 600; }
+.order-summary-body { padding: var(--cds-spacing-06); }
+
+.summary-product { display: flex; gap: var(--cds-spacing-04); margin-bottom: var(--cds-spacing-06); padding-bottom: var(--cds-spacing-06); border-bottom: 1px solid var(--cds-border-subtle-00); }
+.summary-product-icon { width: 40px; height: 40px; border-radius: 6px; background: linear-gradient(135deg, #0f62fe, #0043ce); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.summary-product-icon svg { fill: white; width: 20px; height: 20px; }
+.summary-product-name { font-size: var(--cds-body-01); font-weight: 600; margin-bottom: 2px; }
+.summary-product-plan { font-size: var(--cds-label-01); color: var(--cds-text-helper); }
+
+.summary-line { display: flex; justify-content: space-between; padding: var(--cds-spacing-02) 0; font-size: var(--cds-body-01); }
+.summary-line .label { color: var(--cds-text-secondary); }
+.summary-line .value { font-family: 'IBM Plex Mono', monospace; font-weight: 500; text-align: right; }
+
+.summary-divider { height: 1px; background: var(--cds-border-subtle-00); margin: var(--cds-spacing-04) 0; }
+
+.summary-total { display: flex; justify-content: space-between; padding: var(--cds-spacing-04) 0; font-size: var(--cds-heading-02); }
+.summary-total .label { font-weight: 600; }
+.summary-total .value { font-family: 'IBM Plex Mono', monospace; font-weight: 600; }
+
+.summary-annual { display: flex; justify-content: space-between; padding: var(--cds-spacing-02) 0; font-size: var(--cds-body-01); }
+.summary-annual .label { color: var(--cds-text-secondary); }
+.summary-annual .value { font-family: 'IBM Plex Mono', monospace; color: var(--cds-text-secondary); }
+
+.summary-savings { background: #defbe6; padding: var(--cds-spacing-04) var(--cds-spacing-05); margin: var(--cds-spacing-05) 0; display: flex; justify-content: space-between; align-items: center; font-size: var(--cds-body-01); display: none; }
+.summary-savings.visible { display: flex; }
+.summary-savings .label { color: #0e6027; font-weight: 600; }
+.summary-savings .value { font-family: 'IBM Plex Mono', monospace; color: #0e6027; font-weight: 600; }
+
+.summary-ctas { display: flex; flex-direction: column; gap: 1px; margin-top: var(--cds-spacing-06); }
+.summary-ctas .cds-btn { width: 100%; padding-right: 16px; justify-content: center; }
+
+/* Buttons */
+.cds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--cds-spacing-03); padding: calc(0.875rem - 3px) 60px calc(0.875rem - 3px) 16px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); font-weight: 400; line-height: 1.28572; letter-spacing: 0.16px; cursor: pointer; border: none; position: relative; min-height: 48px; transition: background 70ms; text-decoration: none; }
+.cds-btn svg { position: absolute; right: 16px; width: 16px; height: 16px; fill: currentColor; }
+.cds-btn--primary { background: var(--cds-button-primary); color: var(--cds-text-on-color); }
+.cds-btn--primary:hover { background: var(--cds-button-primary-hover); }
+.cds-btn--primary:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.cds-btn--secondary { background: var(--cds-button-secondary); color: var(--cds-text-on-color); }
+.cds-btn--secondary:hover { background: #474747; }
+.cds-btn--tertiary { background: transparent; color: var(--cds-button-tertiary); border: 1px solid var(--cds-button-tertiary); }
+.cds-btn--tertiary:hover { background: var(--cds-button-primary); color: var(--cds-text-on-color); }
+.cds-btn--ghost { background: transparent; color: var(--cds-link-primary); padding: calc(0.875rem - 3px) 16px; }
+.cds-btn--ghost:hover { background: var(--cds-background-hover); }
+
+/* ========== ENTERPRISE CONFIDENCE BLOCK ========== */
+.enterprise-confidence { background: var(--cds-background); padding: var(--cds-spacing-06); margin-top: var(--cds-spacing-05); }
+.enterprise-confidence h4 { font-size: var(--cds-heading-01); font-weight: 600; margin-bottom: var(--cds-spacing-05); }
+.confidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cds-spacing-04); }
+@media (max-width: 672px) { .confidence-grid { grid-template-columns: 1fr; } }
+.confidence-item { display: flex; align-items: flex-start; gap: var(--cds-spacing-03); font-size: var(--cds-body-01); }
+.confidence-item svg { width: 16px; height: 16px; fill: var(--cds-support-success); flex-shrink: 0; margin-top: 2px; }
+.confidence-item .ci-label { font-weight: 500; }
+.confidence-item .ci-desc { font-size: var(--cds-label-01); color: var(--cds-text-helper); }
+
+/* ========== CONFIRMATION ========== */
+.confirmation-page { max-width: 680px; margin: 0 auto; padding: var(--cds-spacing-10) 0; text-align: center; }
+.confirmation-icon { width: 80px; height: 80px; background: #defbe6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--cds-spacing-06); }
+.confirmation-icon svg { fill: var(--cds-support-success); width: 40px; height: 40px; }
+.confirmation-page h2 { font-size: var(--cds-heading-05); font-weight: 300; margin-bottom: var(--cds-spacing-03); }
+.confirmation-page .order-id { font-family: 'IBM Plex Mono', monospace; font-size: var(--cds-body-02); color: var(--cds-text-secondary); margin-bottom: var(--cds-spacing-07); }
+.confirmation-details { background: var(--cds-background); padding: var(--cds-spacing-07); text-align: left; margin-bottom: var(--cds-spacing-07); }
+.confirmation-details h3 { font-size: var(--cds-heading-02); font-weight: 600; margin-bottom: var(--cds-spacing-05); }
+.confirmation-line { display: flex; justify-content: space-between; padding: var(--cds-spacing-03) 0; border-bottom: 1px solid var(--cds-border-subtle-00); }
+.confirmation-line:last-child { border-bottom: none; }
+.confirmation-line .label { color: var(--cds-text-secondary); }
+.confirmation-line .value { font-weight: 500; }
+.confirmation-actions { display: flex; gap: 1px; justify-content: center; }
+
+/* Focus */
+*:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+</style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="ibm-masthead" role="banner">
+  <div class="ibm-logo"><svg viewBox="0 0 44 16" xmlns="http://www.w3.org/2000/svg" aria-label="IBM"><path d="M0 0h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 2.6h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM2.1 5.2h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM2.1 7.8h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM0 10.4h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 13h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM26 0h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 2.6h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM28.1 5.2h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM28.1 7.8h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM26 10.4h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 13h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35z"/></svg></div>
+  <nav class="masthead-nav" aria-label="Main navigation"><a href="tuesday-catalog.html">Catalog</a><a href="#" class="active">Checkout</a><a href="#">Support</a></nav>
+  <div class="masthead-right">
+    <button class="icon-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7 7 7 0 00-7-7zM26 30h-2v-5a5 5 0 00-5-5h-6a5 5 0 00-5 5v5H6v-5a7 7 0 017-7h6a7 7 0 017 7z"/></svg></button>
+  </div>
+</header>
+
+<!-- Progress Indicator -->
+<div class="progress-indicator" role="navigation" aria-label="Checkout progress">
+  <div class="cds-grid">
+    <div class="progress-steps">
+      <div class="progress-step active" aria-current="step"><span class="step-number">1</span><span class="step-label">Plan</span></div>
+      <div class="progress-step"><span class="step-number">2</span><span class="step-label">Configuration</span></div>
+      <div class="progress-step"><span class="step-number">3</span><span class="step-label">Review</span></div>
+      <div class="progress-step"><span class="step-number">4</span><span class="step-label">Payment</span></div>
+    </div>
+  </div>
+</div>
+
+<main class="cds-grid">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Configure watsonx.data</h1>
+    <p>Select your plan, configure resources, and choose your deployment target.</p>
+  </div>
+
+  <div class="config-layout">
+
+    <!-- LEFT: Configuration Panels -->
+    <div class="config-panels">
+
+      <!-- Panel 1: Plan Selection (Trial + Buy Unified) -->
+      <div class="config-panel open" id="panel-plan">
+        <div class="config-panel-header" onclick="togglePanel('panel-plan')" tabindex="0" role="button" aria-expanded="true" aria-controls="panel-plan-body">
+          <h3><span class="step-num">1</span> Select plan</h3>
+          <svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+        </div>
+        <div class="config-panel-body" id="panel-plan-body">
+          <div class="radio-tile-group" role="radiogroup" aria-label="Select a plan">
+            <label class="radio-tile" onclick="selectPlan(this, 'lite')">
+              <input type="radio" name="plan" value="lite">
+              <div class="tile-name">Lite</div>
+              <div class="tile-price">Free</div>
+              <div class="tile-desc">30-day trial · 1 engine · 1 TB · IBM Cloud only</div>
+            </label>
+            <label class="radio-tile selected" onclick="selectPlan(this, 'standard')">
+              <input type="radio" name="plan" value="standard" checked>
+              <div class="tile-badge">Recommended</div>
+              <div class="tile-name">Standard</div>
+              <div class="tile-price">From $1.04 / RU-Hr</div>
+              <div class="tile-desc">Unlimited engines · Multi-cloud · Standard support</div>
+            </label>
+            <label class="radio-tile" onclick="selectPlan(this, 'enterprise')">
+              <input type="radio" name="plan" value="enterprise">
+              <div class="tile-name">Enterprise</div>
+              <div class="tile-price">Custom pricing</div>
+              <div class="tile-desc">Dedicated infra · Custom SLA · Premium support</div>
+            </label>
+          </div>
+
+          <!-- Commitment Selection (within plan panel) -->
+          <div style="margin-top:var(--cds-spacing-06);">
+            <label class="form-label">Commitment term</label>
+            <div class="form-row" style="grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cds-border-subtle-00);">
+              <label class="radio-tile selected" onclick="setTerm(this, 'monthly')" style="min-height: auto; padding: var(--cds-spacing-04) var(--cds-spacing-05);">
+                <input type="radio" name="term" value="monthly" checked>
+                <div class="tile-name" style="font-size: var(--cds-body-01);">Monthly</div>
+                <div class="tile-desc">Flexible · Cancel anytime</div>
+              </label>
+              <label class="radio-tile" onclick="setTerm(this, 'annual')" style="min-height: auto; padding: var(--cds-spacing-04) var(--cds-spacing-05); position: relative;">
+                <input type="radio" name="term" value="annual">
+                <div class="tile-badge" style="font-size:10px;">Save 15%</div>
+                <div class="tile-name" style="font-size: var(--cds-body-01);">Annual</div>
+                <div class="tile-desc">Save 15% · Billed annually</div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Commitment Banner -->
+          <div class="commitment-banner monthly" id="commitment-banner" role="status" aria-live="polite">
+            <svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/><path d="M15 8h2v2h-2zm0 4h2v12h-2z"/></svg>
+            <span><strong>Monthly commitment</strong> — Flexible, cancel anytime. Switch to annual to save 15%.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Deployment & Region -->
+      <div class="config-panel open" id="panel-deploy">
+        <div class="config-panel-header" onclick="togglePanel('panel-deploy')" tabindex="0" role="button" aria-expanded="true" aria-controls="panel-deploy-body">
+          <h3><span class="step-num">2</span> Deployment &amp; region</h3>
+          <svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+        </div>
+        <div class="config-panel-body" id="panel-deploy-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="cloud-provider">Cloud provider</label>
+              <select class="form-input" id="cloud-provider" aria-describedby="cloud-helper">
+                <option>IBM Cloud</option>
+                <option selected>AWS</option>
+                <option>Microsoft Azure</option>
+              </select>
+              <div class="form-helper" id="cloud-helper">Select where to deploy your watsonx.data instance.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="region">Region</label>
+              <select class="form-input" id="region">
+                <option selected>US East (Virginia)</option>
+                <option>US West (Oregon)</option>
+                <option>EU (Frankfurt)</option>
+                <option>AP (Tokyo)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Resources -->
+      <div class="config-panel open" id="panel-resources">
+        <div class="config-panel-header" onclick="togglePanel('panel-resources')" tabindex="0" role="button" aria-expanded="true" aria-controls="panel-resources-body">
+          <h3><span class="step-num">3</span> Configure resources</h3>
+          <svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+        </div>
+        <div class="config-panel-body" id="panel-resources-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Presto engines</label>
+              <div class="number-input">
+                <button aria-label="Decrease engines" onclick="adjustNumber('engines', -1)">−</button>
+                <input type="number" id="engines" value="2" min="1" max="10" aria-label="Number of Presto engines">
+                <button aria-label="Increase engines" onclick="adjustNumber('engines', 1)">+</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nodes per engine</label>
+              <div class="number-input">
+                <button aria-label="Decrease nodes" onclick="adjustNumber('nodes', -1)">−</button>
+                <input type="number" id="nodes" value="4" min="1" max="16" aria-label="Number of nodes per engine">
+                <button aria-label="Increase nodes" onclick="adjustNumber('nodes', 1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Add-ons -->
+      <div class="config-panel open" id="panel-addons">
+        <div class="config-panel-header" onclick="togglePanel('panel-addons')" tabindex="0" role="button" aria-expanded="true" aria-controls="panel-addons-body">
+          <h3><span class="step-num">4</span> Add-ons</h3>
+          <svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+        </div>
+        <div class="config-panel-body" id="panel-addons-body">
+          <div class="cds-toggle" onclick="this.querySelector('.toggle-track').classList.toggle('on')">
+            <div class="toggle-track on"></div>
+            <div>
+              <div style="font-weight:500">watsonx.governance</div>
+              <div style="font-size:var(--cds-label-01);color:var(--cds-text-helper)">AI governance, risk, and compliance</div>
+            </div>
+            <span class="toggle-price">+$0.40 /RU-Hr</span>
+          </div>
+          <div class="cds-toggle" onclick="this.querySelector('.toggle-track').classList.toggle('on')">
+            <div class="toggle-track"></div>
+            <div>
+              <div style="font-weight:500">Premium Support</div>
+              <div style="font-size:var(--cds-label-01);color:var(--cds-text-helper)">24/7 support with 15-minute response</div>
+            </div>
+            <span class="toggle-price">+$500 /mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise Confidence Block (Before Payment) -->
+      <div class="enterprise-confidence" role="complementary" aria-label="Enterprise confidence and security information">
+        <h4>Enterprise confidence</h4>
+        <div class="confidence-grid">
+          <div class="confidence-item">
+            <svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg>
+            <div><div class="ci-label">Secure payment</div><div class="ci-desc">TLS 1.3 encrypted · PCI DSS compliant</div></div>
+          </div>
+          <div class="confidence-item">
+            <svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg>
+            <div><div class="ci-label">SLA included</div><div class="ci-desc">99.9% uptime guarantee (Standard+)</div></div>
+          </div>
+          <div class="confidence-item">
+            <svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg>
+            <div><div class="ci-label">Cancellation policy</div><div class="ci-desc">Monthly: cancel anytime · Annual: pro-rata refund</div></div>
+          </div>
+          <div class="confidence-item">
+            <svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg>
+            <div><div class="ci-label">Auto-renewal</div><div class="ci-desc">Renews at end of term · 30-day notice to cancel</div></div>
+          </div>
+          <div class="confidence-item">
+            <svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg>
+            <div><div class="ci-label">Data residency</div><div class="ci-desc">Data stored in selected deployment region</div></div>
+          </div>
+          <div class="confidence-item">
+            <svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg>
+            <div><div class="ci-label">Compliance</div><div class="ci-desc">SOC 2 Type II · GDPR · HIPAA eligible</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Live Pricing Summary -->
+    <aside class="order-summary" aria-label="Order summary" aria-live="polite">
+      <div class="order-summary-header"><h3>Order summary</h3></div>
+      <div class="order-summary-body">
+
+        <div class="summary-product">
+          <div class="summary-product-icon"><svg viewBox="0 0 32 32"><path d="M27 5H5a3 3 0 00-3 3v16a3 3 0 003 3h22a3 3 0 003-3V8a3 3 0 00-3-3zm1 19a1 1 0 01-1 1H5a1 1 0 01-1-1V11h24z"/></svg></div>
+          <div>
+            <div class="summary-product-name">watsonx.data</div>
+            <div class="summary-product-plan" id="summary-plan">Standard · Monthly</div>
+          </div>
+        </div>
+
+        <div class="summary-line"><span class="label">Plan</span><span class="value" id="s-plan">Standard</span></div>
+        <div class="summary-line"><span class="label">Term</span><span class="value" id="s-term">Monthly</span></div>
+        <div class="summary-line"><span class="label">Engines</span><span class="value" id="s-engines">2 Presto</span></div>
+        <div class="summary-line"><span class="label">Nodes</span><span class="value" id="s-nodes">4 / engine</span></div>
+        <div class="summary-line"><span class="label">Cloud</span><span class="value" id="s-cloud">AWS · US East</span></div>
+        <div class="summary-line"><span class="label">Add-on: Governance</span><span class="value" id="s-gov">$460.80</span></div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-line"><span class="label">Base compute</span><span class="value">$1,196.16</span></div>
+        <div class="summary-line"><span class="label">watsonx.governance</span><span class="value">$460.80</span></div>
+        <div class="summary-line"><span class="label">Estimated tax</span><span class="value" style="color:var(--cds-text-helper)">Calculated at checkout</span></div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-total"><span class="label">Est. monthly</span><span class="value" id="s-monthly-total">$1,656.96</span></div>
+        <div class="summary-annual"><span class="label">Est. annual</span><span class="value" id="s-annual-total">$19,883.52</span></div>
+
+        <div class="summary-savings" id="summary-savings"><span class="label">Annual savings</span><span class="value" id="s-savings">$3,508.86</span></div>
+
+        <div class="summary-ctas">
+          <a class="cds-btn cds-btn--primary" href="#" aria-label="Proceed to payment">
+            Proceed to payment
+            <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg>
+          </a>
+          <a class="cds-btn cds-btn--ghost" href="#" aria-label="Save configuration">Save configuration</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Confirmation (hidden by default, shown after payment) -->
+  <div class="confirmation-page" id="confirmation" style="display:none;" aria-label="Order confirmation">
+    <div class="confirmation-icon"><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></div>
+    <h2>Order confirmed</h2>
+    <p class="order-id">Order IBM-2026-0219-7842</p>
+    <div class="confirmation-details">
+      <h3>Order details</h3>
+      <div class="confirmation-line"><span class="label">Product</span><span class="value">watsonx.data Standard</span></div>
+      <div class="confirmation-line"><span class="label">Deployment</span><span class="value">AWS · US East (Virginia)</span></div>
+      <div class="confirmation-line"><span class="label">Resources</span><span class="value">2 Presto engines · 4 nodes each</span></div>
+      <div class="confirmation-line"><span class="label">Add-ons</span><span class="value">watsonx.governance</span></div>
+      <div class="confirmation-line"><span class="label">Billing</span><span class="value">Monthly · $1,656.96 /mo</span></div>
+      <div class="confirmation-line"><span class="label">Payment</span><span class="value">Visa ending 4242</span></div>
+      <div class="confirmation-line"><span class="label">Provisioning</span><span class="value" style="color:var(--cds-support-success);font-weight:600">In progress — est. 5 min</span></div>
+    </div>
+    <div class="confirmation-actions">
+      <a class="cds-btn cds-btn--primary" href="#" style="padding-right:60px;">Go to watsonx.data console <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+      <a class="cds-btn cds-btn--secondary" href="tuesday-catalog.html" style="padding-right:16px;">Back to catalog</a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function togglePanel(id) {
+  var panel = document.getElementById(id);
+  var isOpen = panel.classList.contains('open');
+  panel.classList.toggle('open');
+  panel.querySelector('[aria-expanded]').setAttribute('aria-expanded', !isOpen);
+}
+
+function selectPlan(el, plan) {
+  el.closest('.radio-tile-group').querySelectorAll('.radio-tile').forEach(function(t) { t.classList.remove('selected'); });
+  el.classList.add('selected');
+  document.getElementById('s-plan').textContent = plan.charAt(0).toUpperCase() + plan.slice(1);
+}
+
+function setTerm(el, term) {
+  el.closest('.form-row').querySelectorAll('.radio-tile').forEach(function(t) { t.classList.remove('selected'); });
+  el.classList.add('selected');
+  document.getElementById('s-term').textContent = term === 'annual' ? 'Annual' : 'Monthly';
+  document.getElementById('summary-plan').textContent = 'Standard · ' + (term === 'annual' ? 'Annual' : 'Monthly');
+
+  var banner = document.getElementById('commitment-banner');
+  var savings = document.getElementById('summary-savings');
+  if (term === 'annual') {
+    banner.className = 'commitment-banner annual';
+    banner.querySelector('span').innerHTML = '<strong>Annual commitment</strong> — Save 15% with annual billing. Billed annually at $16,884.39.';
+    savings.classList.add('visible');
+  } else {
+    banner.className = 'commitment-banner monthly';
+    banner.querySelector('span').innerHTML = '<strong>Monthly commitment</strong> — Flexible, cancel anytime. Switch to annual to save 15%.';
+    savings.classList.remove('visible');
+  }
+}
+
+function adjustNumber(id, delta) {
+  var input = document.getElementById(id);
+  var val = parseInt(input.value) + delta;
+  var min = parseInt(input.min);
+  var max = parseInt(input.max);
+  if (val >= min && val <= max) {
+    input.value = val;
+    if (id === 'engines') document.getElementById('s-engines').textContent = val + ' Presto';
+    if (id === 'nodes') document.getElementById('s-nodes').textContent = val + ' / engine';
+  }
+}
+</script>
+</body>
+</html>

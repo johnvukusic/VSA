@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>buy.ibm.com — IBM Software Store</title>
+<style>
+/* === IBM CARBON DESIGN TOKENS === */
+:root {
+  --cds-blue-60: #0f62fe;
+  --cds-blue-70: #0043ce;
+  --cds-blue-80: #002d9c;
+  --cds-blue-90: #001d6c;
+  --cds-green-50: #24a148;
+  --cds-green-40: #42be65;
+  --cds-purple-60: #8a3ffc;
+  --cds-purple-70: #6929c4;
+  --cds-red-60: #da1e28;
+  --cds-teal-50: #009d9a;
+  --cds-teal-60: #007d79;
+  --cds-gray-10: #f4f4f4;
+  --cds-gray-20: #e0e0e0;
+  --cds-gray-30: #c6c6c6;
+  --cds-gray-50: #8d8d8d;
+  --cds-gray-60: #6f6f6f;
+  --cds-gray-70: #525252;
+  --cds-gray-80: #393939;
+  --cds-gray-90: #262626;
+  --cds-gray-100: #161616;
+  --cds-white: #ffffff;
+  --cds-focus: #0f62fe;
+  --cds-hover: rgba(0,0,0,0.05);
+  --cds-field: #f4f4f4;
+  --cds-shadow-sm: 0 2px 6px rgba(0,0,0,0.1);
+  --cds-shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+  --cds-shadow-lg: 0 8px 32px rgba(0,0,0,0.14);
+  --cds-radius: 0;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+  --max-width: 1584px;
+  --grid-margin: max(1rem, calc((100vw - var(--max-width)) / 2));
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cds-white);
+  color: var(--cds-gray-100);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* === L0 GLOBAL MASTHEAD === */
+.l0-masthead {
+  background: var(--cds-gray-100);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid var(--cds-gray-80);
+}
+.l0-left { display: flex; align-items: center; gap: 0; }
+.l0-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  height: 48px;
+  text-decoration: none;
+  border-right: 1px solid var(--cds-gray-80);
+}
+.l0-logo svg { width: 16px; height: 16px; fill: var(--cds-white); }
+.l0-nav { display: flex; height: 48px; }
+.l0-nav a {
+  color: var(--cds-gray-30);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 0 1rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.l0-nav a:hover { background: var(--cds-gray-80); color: var(--cds-white); }
+.l0-right { margin-left: auto; display: flex; align-items: center; gap: 0; }
+.l0-right a {
+  color: var(--cds-gray-30);
+  text-decoration: none;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.l0-right a:hover { background: var(--cds-gray-80); }
+.l0-right svg { width: 20px; height: 20px; fill: var(--cds-white); }
+
+/* === L1 SITE MASTHEAD === */
+.l1-masthead {
+  background: var(--cds-gray-90);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  position: sticky;
+  top: 48px;
+  z-index: 9998;
+  border-bottom: 1px solid var(--cds-gray-80);
+}
+.l1-brand {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cds-white);
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  height: 48px;
+  white-space: nowrap;
+}
+.l1-brand .buy-badge {
+  background: var(--cds-blue-60);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.l1-nav { display: flex; height: 48px; }
+.l1-nav a {
+  color: var(--cds-gray-30);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 0 1rem;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+  border-bottom: 2px solid transparent;
+  font-weight: 400;
+}
+.l1-nav a:hover { color: var(--cds-white); background: rgba(255,255,255,0.05); }
+.l1-nav a.active { color: var(--cds-white); border-bottom-color: var(--cds-blue-60); }
+
+/* === STOREFRONT PAGE === */
+.store-hero {
+  background: var(--cds-gray-100);
+  padding: 3rem 2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.store-hero::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(15,98,254,0.06) 50%, rgba(138,63,252,0.04) 100%);
+  pointer-events: none;
+}
+.store-hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.store-hero h1 {
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--cds-white);
+  line-height: 1.15;
+  max-width: 600px;
+  letter-spacing: -0.02em;
+}
+.store-hero h1 strong { font-weight: 600; }
+.store-hero p {
+  font-size: 16px;
+  color: var(--cds-gray-30);
+  margin-top: 1rem;
+  max-width: 520px;
+  line-height: 1.6;
+}
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+.hero-stat-num {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--cds-blue-60);
+  font-family: var(--font-mono);
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--cds-gray-50);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+/* === QUICK FILTERS === */
+.quick-bar {
+  background: var(--cds-white);
+  border-bottom: 1px solid var(--cds-gray-20);
+  padding: 0 2rem;
+  position: sticky;
+  top: 96px;
+  z-index: 9000;
+}
+.quick-bar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  gap: 0;
+}
+.filter-pills { display: flex; gap: 0; height: 56px; flex: 1; }
+.filter-pill {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--cds-gray-70);
+  padding: 0 1rem;
+  cursor: pointer;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.filter-pill:hover { color: var(--cds-gray-100); background: var(--cds-hover); }
+.filter-pill.active { color: var(--cds-gray-100); border-bottom-color: var(--cds-blue-60); font-weight: 500; }
+.filter-pill .count {
+  font-size: 11px;
+  background: var(--cds-gray-10);
+  color: var(--cds-gray-70);
+  padding: 1px 6px;
+  font-weight: 500;
+}
+.filter-pill.active .count {
+  background: var(--cds-blue-60);
+  color: white;
+}
+.quick-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-left: 1px solid var(--cds-gray-20);
+  padding-left: 1rem;
+  height: 56px;
+}
+.quick-search input {
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--cds-gray-100);
+  width: 180px;
+  outline: none;
+}
+.quick-search svg { width: 16px; height: 16px; fill: var(--cds-gray-50); flex-shrink: 0; }
+.view-toggle {
+  display: flex;
+  gap: 0;
+  border-left: 1px solid var(--cds-gray-20);
+  margin-left: 1rem;
+  height: 56px;
+}
+.view-btn {
+  background: none;
+  border: none;
+  width: 48px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.view-btn:hover { background: var(--cds-hover); }
+.view-btn.active svg { fill: var(--cds-blue-60); }
+.view-btn svg { width: 16px; height: 16px; fill: var(--cds-gray-50); }
+
+/* === PRODUCT GRID === */
+.product-grid-wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+.grid-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.grid-header h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cds-gray-100);
+}
+.grid-header h2 span { color: var(--cds-gray-50); font-weight: 300; }
+.grid-sort select {
+  font-family: var(--font-body);
+  font-size: 14px;
+  border: 1px solid var(--cds-gray-30);
+  background: var(--cds-white);
+  padding: 8px 32px 8px 12px;
+  color: var(--cds-gray-100);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23525252' d='M6 8.5L1.5 4h9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1px;
+  background: var(--cds-gray-20);
+  border: 1px solid var(--cds-gray-20);
+}
+.product-card {
+  background: var(--cds-white);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.product-card:hover {
+  box-shadow: var(--cds-shadow-md);
+  z-index: 1;
+}
+
+/* Product Image Area */
+.card-image {
+  height: 200px;
+  background: var(--cds-gray-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--cds-gray-20);
+}
+.card-image .product-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+.card-image::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  opacity: 0.06;
+  z-index: 1;
+}
+.card-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 4px;
+  z-index: 3;
+}
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.badge-trial { background: var(--cds-green-50); color: white; }
+.badge-buy { background: var(--cds-blue-60); color: white; }
+.badge-payg { background: var(--cds-purple-60); color: white; }
+.badge-enterprise { background: var(--cds-gray-80); color: white; }
+.badge-new { background: var(--cds-red-60); color: white; }
+.badge-coming {
+  background: rgba(0,0,0,0.7);
+  color: var(--cds-gray-30);
+  backdrop-filter: blur(4px);
+}
+.card-quick-action {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--cds-blue-60);
+  color: white;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.2s;
+  z-index: 3;
+}
+.product-card:hover .card-quick-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Content */
+.card-content { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+.card-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cds-gray-50);
+  margin-bottom: 0.35rem;
+}
+.card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--cds-gray-60);
+  line-height: 1.5;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cds-gray-20);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-price {
+  font-size: 14px;
+  color: var(--cds-gray-100);
+}
+.card-price strong {
+  font-weight: 600;
+  font-size: 18px;
+}
+.card-price .price-unit {
+  font-size: 12px;
+  color: var(--cds-gray-50);
+}
+.card-price .free-label {
+  color: var(--cds-green-50);
+  font-weight: 600;
+  font-size: 14px;
+}
+.card-cloud-tags {
+  display: flex;
+  gap: 4px;
+}
+.cloud-tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  background: var(--cds-gray-10);
+  color: var(--cds-gray-70);
+  font-weight: 500;
+  border: 1px solid var(--cds-gray-20);
+}
+
+/* === PRODUCT DETAIL PAGE (PDP) === */
+.pdp-page { display: none; }
+.pdp-page.active { display: block; }
+.store-page.hidden { display: none; }
+
+.pdp-breadcrumb {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  font-size: 13px;
+  color: var(--cds-gray-50);
+}
+.pdp-breadcrumb a {
+  color: var(--cds-blue-60);
+  text-decoration: none;
+}
+.pdp-breadcrumb a:hover { text-decoration: underline; }
+
+.pdp-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* PDP Left — Product Media */
+.pdp-media { position: relative; }
+
+.pdp-hero-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--cds-gray-10);
+  border: 1px solid var(--cds-gray-20);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pdp-hero-image .mock-ui {
+  width: 92%;
+  height: 88%;
+  background: var(--cds-white);
+  border-radius: 4px;
+  box-shadow: var(--cds-shadow-sm);
+  overflow: hidden;
+  position: relative;
+}
+.mock-ui-topbar {
+  height: 32px;
+  background: var(--cds-gray-90);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 6px;
+}
+.mock-dot { width: 8px; height: 8px; border-radius: 50%; }
+.mock-dot.r { background: #ff5f57; }
+.mock-dot.y { background: #febc2e; }
+.mock-dot.g { background: #28c840; }
+.mock-ui-body {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  height: calc(100% - 32px);
+}
+.mock-sidebar {
+  background: var(--cds-gray-10);
+  border-radius: 2px;
+  padding: 12px;
+}
+.mock-sidebar-item {
+  height: 8px;
+  background: var(--cds-gray-20);
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+.mock-sidebar-item.active { background: var(--cds-blue-60); }
+.mock-main { display: flex; flex-direction: column; gap: 8px; }
+.mock-chart {
+  flex: 1;
+  background: var(--cds-gray-10);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  gap: 4px;
+}
+.mock-bar {
+  flex: 1;
+  background: var(--cds-blue-60);
+  border-radius: 2px 2px 0 0;
+  opacity: 0.7;
+  transition: height 0.5s ease;
+}
+.mock-bar:nth-child(even) { background: var(--cds-teal-50); }
+.mock-table {
+  height: 80px;
+  background: var(--cds-gray-10);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+}
+.mock-row {
+  height: 8px;
+  background: var(--cds-gray-20);
+  border-radius: 1px;
+}
+.mock-row:first-child { background: var(--cds-gray-30); }
+
+/* Media Carousel */
+.pdp-carousel {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+.carousel-thumb {
+  aspect-ratio: 16/10;
+  background: var(--cds-gray-10);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-thumb:hover { border-color: var(--cds-gray-30); }
+.carousel-thumb.active { border-color: var(--cds-blue-60); }
+.carousel-thumb .thumb-label {
+  font-size: 10px;
+  color: var(--cds-gray-50);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.carousel-thumb.video::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+}
+.carousel-thumb.video::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid white;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  z-index: 1;
+  margin-left: 2px;
+}
+
+/* PDP Product Info */
+.pdp-info { margin-top: 2rem; }
+.pdp-info h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+  margin-bottom: 1rem;
+}
+.pdp-description {
+  font-size: 14px;
+  color: var(--cds-gray-70);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Features Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--cds-gray-20);
+  border: 1px solid var(--cds-gray-20);
+  margin-bottom: 2rem;
+}
+.feature-item {
+  background: var(--cds-white);
+  padding: 1.25rem;
+}
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--cds-blue-60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.feature-icon svg { width: 16px; height: 16px; fill: white; }
+.feature-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+  margin-bottom: 0.25rem;
+}
+.feature-desc {
+  font-size: 12px;
+  color: var(--cds-gray-60);
+  line-height: 1.5;
+}
+
+/* Tabs */
+.pdp-tabs {
+  border-bottom: 1px solid var(--cds-gray-20);
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+}
+.pdp-tab {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--cds-gray-60);
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+.pdp-tab:hover { color: var(--cds-gray-100); }
+.pdp-tab.active { color: var(--cds-gray-100); border-bottom-color: var(--cds-blue-60); font-weight: 500; }
+
+/* === PDP RIGHT — CONFIG CARD === */
+.config-card {
+  position: sticky;
+  top: 112px;
+  background: var(--cds-white);
+  border: 1px solid var(--cds-gray-20);
+}
+.config-card-header {
+  padding: 1.5rem 1.5rem 0;
+}
+.config-product-name {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cds-gray-50);
+  margin-bottom: 0.25rem;
+}
+.config-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+  line-height: 1.2;
+}
+.config-badges {
+  display: flex;
+  gap: 6px;
+  margin-top: 0.75rem;
+}
+
+/* Plan selector */
+.plan-selector {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--cds-gray-20);
+  margin-top: 1.25rem;
+}
+.plan-selector-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.plan-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.plan-option {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--cds-gray-20);
+  cursor: pointer;
+  transition: all 0.15s;
+  gap: 12px;
+  position: relative;
+}
+.plan-option:hover { border-color: var(--cds-gray-30); background: var(--cds-gray-10); }
+.plan-option.selected {
+  border-color: var(--cds-blue-60);
+  background: rgba(15,98,254,0.02);
+}
+.plan-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--cds-gray-30);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.plan-option.selected .plan-radio {
+  border-color: var(--cds-blue-60);
+}
+.plan-option.selected .plan-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cds-blue-60);
+}
+.plan-details { flex: 1; }
+.plan-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+}
+.plan-sub {
+  font-size: 12px;
+  color: var(--cds-gray-50);
+}
+.plan-price-right {
+  text-align: right;
+}
+.plan-price-right .price-amount {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+}
+.plan-price-right .price-unit {
+  font-size: 11px;
+  color: var(--cds-gray-50);
+  display: block;
+}
+.plan-tag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--cds-blue-60);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Commitment Toggle */
+.commitment-toggle {
+  padding: 0 1.5rem;
+  margin-bottom: 1rem;
+}
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.toggle-label {
+  font-size: 13px;
+  color: var(--cds-gray-70);
+}
+.toggle-switch {
+  display: flex;
+  background: var(--cds-gray-10);
+  border: 1px solid var(--cds-gray-20);
+}
+.toggle-opt {
+  font-size: 12px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  color: var(--cds-gray-60);
+  font-weight: 500;
+}
+.toggle-opt.active {
+  background: var(--cds-gray-100);
+  color: var(--cds-white);
+}
+.savings-note {
+  font-size: 12px;
+  color: var(--cds-green-50);
+  font-weight: 500;
+  text-align: right;
+  margin-top: 2px;
+}
+
+/* Config Options */
+.config-options {
+  padding: 0 1.5rem 1rem;
+}
+.config-option {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--cds-gray-20);
+}
+.config-option:last-child { border-bottom: none; }
+.config-option label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cds-gray-70);
+  display: block;
+  margin-bottom: 6px;
+}
+.config-option select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--cds-gray-30);
+  background: var(--cds-white);
+  color: var(--cds-gray-100);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23525252' d='M6 8.5L1.5 4h9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+/* Price Summary */
+.config-summary {
+  padding: 1.5rem;
+  background: var(--cds-gray-10);
+  border-top: 1px solid var(--cds-gray-20);
+}
+.config-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--cds-gray-70);
+  margin-bottom: 0.5rem;
+}
+.config-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--cds-gray-30);
+  margin-top: 0.5rem;
+}
+.config-total-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cds-gray-100);
+}
+.config-total-price {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--cds-gray-100);
+  font-family: var(--font-mono);
+}
+.config-total-unit {
+  font-size: 13px;
+  color: var(--cds-gray-50);
+  font-weight: 400;
+}
+
+/* CTA Buttons */
+.config-ctas {
+  padding: 1.5rem;
+}
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--cds-blue-60);
+  color: white;
+}
+.btn-primary:hover { background: var(--cds-blue-70); }
+.btn-primary svg { width: 16px; height: 16px; fill: white; }
+.btn-secondary {
+  width: 100%;
+  padding: 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--cds-blue-60);
+  background: var(--cds-white);
+  color: var(--cds-blue-60);
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-secondary:hover { background: rgba(15,98,254,0.05); }
+.btn-tertiary {
+  width: 100%;
+  padding: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cds-blue-60);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  text-decoration: underline;
+}
+
+/* Trust Signals */
+.config-trust {
+  padding: 0 1.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--cds-gray-50);
+}
+.trust-item svg { width: 14px; height: 14px; fill: var(--cds-green-50); flex-shrink: 0; }
+
+/* === SECTION DIVIDER === */
+.section-divider {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-divider hr {
+  border: none;
+  border-top: 1px solid var(--cds-gray-20);
+}
+
+/* === RATINGS BAR === */
+.pdp-ratings {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+.stars { display: flex; gap: 2px; }
+.star { width: 14px; height: 14px; fill: #f1c21b; }
+.star.empty { fill: var(--cds-gray-20); }
+.rating-text { font-size: 13px; color: var(--cds-gray-50); }
+
+/* === RESPONSIVE === */
+@media (max-width: 1055px) {
+  .pdp-layout { grid-template-columns: 1fr; }
+  .config-card { position: static; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+}
+@media (max-width: 671px) {
+  .store-hero h1 { font-size: 28px; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+  .l0-nav, .l1-nav { display: none; }
+  .quick-bar-inner { overflow-x: auto; }
+  .pdp-carousel { grid-template-columns: repeat(5, 80px); overflow-x: auto; }
+  .feature-grid { grid-template-columns: 1fr; }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.product-card {
+  animation: fadeInUp 0.4s ease both;
+}
+.product-card:nth-child(1) { animation-delay: 0s; }
+.product-card:nth-child(2) { animation-delay: 0.05s; }
+.product-card:nth-child(3) { animation-delay: 0.1s; }
+.product-card:nth-child(4) { animation-delay: 0.15s; }
+.product-card:nth-child(5) { animation-delay: 0.2s; }
+.product-card:nth-child(6) { animation-delay: 0.25s; }
+.product-card:nth-child(7) { animation-delay: 0.3s; }
+.product-card:nth-child(8) { animation-delay: 0.35s; }
+.product-card:nth-child(9) { animation-delay: 0.4s; }
+
+/* === FOOTER === */
+.site-footer {
+  background: var(--cds-gray-100);
+  padding: 2rem;
+  margin-top: 3rem;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-inner svg { width: 48px; height: 20px; fill: var(--cds-white); }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { color: var(--cds-gray-50); font-size: 12px; text-decoration: none; }
+.footer-links a:hover { color: var(--cds-white); }
+</style>
+</head>
+<body>
+
+<!-- ============ L0 GLOBAL MASTHEAD ============ -->
+<header class="l0-masthead">
+  <div class="l0-left">
+    <a href="#" class="l0-logo" aria-label="IBM">
+      <svg viewBox="0 0 32 32"><rect x="0" y="1" width="32" height="4" /><rect x="0" y="7" width="32" height="4" /><rect x="0" y="13" width="10" height="4" /><rect x="22" y="13" width="10" height="4" /><rect x="0" y="19" width="10" height="4" /><rect x="22" y="19" width="10" height="4" /><rect x="0" y="25" width="32" height="4" /><rect x="12" y="13" width="8" height="4" /><rect x="12" y="19" width="8" height="4" /></svg>
+    </a>
+    <nav class="l0-nav">
+      <a href="#">Products</a>
+      <a href="#">Solutions</a>
+      <a href="#">Support</a>
+    </nav>
+  </div>
+  <div class="l0-right">
+    <a href="#" aria-label="Search"><svg viewBox="0 0 20 20"><path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58-1.414 1.414-3.58-3.58A8 8 0 1 1 8 0a8 8 0 0 1 6.32 12.906z"/></svg></a>
+    <a href="#" aria-label="Account"><svg viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 15.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08a7.2 7.2 0 0 1-6 3.22z"/></svg></a>
+    <a href="#" aria-label="Cart"><svg viewBox="0 0 20 20"><path d="M6 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 1h2l.4 2h14.7l-2.6 9H5.2l-.3-1.5L2.6 3H1V1zm3.8 4l1.8 7h9.2l1.8-7H4.8z"/></svg></a>
+  </div>
+</header>
+
+<!-- ============ L1 SITE MASTHEAD ============ -->
+<nav class="l1-masthead">
+  <a href="#" class="l1-brand" onclick="showStore(); return false;">
+    IBM Software Store <span class="buy-badge">Buy</span>
+  </a>
+  <div class="l1-nav">
+    <a href="#" class="active" onclick="showStore(); return false;">All Products</a>
+    <a href="#">New Releases</a>
+    <a href="#">Free Trials</a>
+    <a href="#">Deals</a>
+    <a href="#">Enterprise</a>
+  </div>
+</nav>
+
+<!-- ============================================ -->
+<!-- ============ STORE PAGE ==================== -->
+<!-- ============================================ -->
+<div class="store-page" id="storePage">
+
+  <!-- HERO -->
+  <section class="store-hero">
+    <div class="store-hero-inner">
+      <h1><strong>IBM Software Store</strong><br>Buy, try, and deploy — instantly.</h1>
+      <p>Self-serve purchasing for IBM's enterprise software. Start a free trial, configure your plan, and deploy to your cloud in minutes.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">30</div>
+          <div class="hero-stat-label">Products</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">22</div>
+          <div class="hero-stat-label">Free trials</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">17</div>
+          <div class="hero-stat-label">Buy online</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK FILTER BAR -->
+  <div class="quick-bar">
+    <div class="quick-bar-inner">
+      <div class="filter-pills">
+        <button class="filter-pill active" data-filter="all">All <span class="count">30</span></button>
+        <button class="filter-pill" data-filter="ecomm">eCOMM Focus <span class="count">5</span></button>
+        <button class="filter-pill" data-filter="select">Select Focus <span class="count">12</span></button>
+        <button class="filter-pill" data-filter="more">More <span class="count">13</span></button>
+        <button class="filter-pill" data-filter="trial">Free Trial <span class="count">22</span></button>
+        <button class="filter-pill" data-filter="buy">Buy Online <span class="count">17</span></button>
+      </div>
+      <div class="quick-search">
+        <svg viewBox="0 0 20 20"><path d="M8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zm6.32-1.094l3.58 3.58-1.414 1.414-3.58-3.58A8 8 0 1 1 8 0a8 8 0 0 1 6.32 12.906z"/></svg>
+        <input type="text" placeholder="Search products..." id="searchInput" oninput="filterProducts()">
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" aria-label="Grid view"><svg viewBox="0 0 16 16"><rect x="0" y="0" width="7" height="7"/><rect x="9" y="0" width="7" height="7"/><rect x="0" y="9" width="7" height="7"/><rect x="9" y="9" width="7" height="7"/></svg></button>
+        <button class="view-btn" aria-label="List view"><svg viewBox="0 0 16 16"><rect x="0" y="0" width="16" height="3"/><rect x="0" y="5" width="16" height="3"/><rect x="0" y="10" width="16" height="3"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <div class="product-grid-wrap">
+    <div class="grid-header">
+      <h2 id="gridTitle">All Products <span>· 30</span></h2>
+      <div class="grid-sort">
+        <select>
+          <option>Recommended</option>
+          <option>Popular</option>
+          <option>Price: Low → High</option>
+          <option>Price: High → Low</option>
+          <option>A → Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!-- ============ PDP PAGE ====================== -->
+<!-- ============================================ -->
+<div class="pdp-page" id="pdpPage">
+  <div class="pdp-breadcrumb">
+    <a href="#" onclick="showStore(); return false;">All Products</a>
+    <span> / </span>
+    <a href="#" onclick="showStore(); return false;">AI & Data</a>
+    <span> / </span>
+    <span id="pdpBreadcrumbName">watsonx.data</span>
+  </div>
+
+  <div class="pdp-layout">
+    <!-- LEFT: Media + Info -->
+    <div class="pdp-left">
+      <div class="pdp-media">
+        <div class="pdp-hero-image" id="pdpHeroImage">
+          <div class="mock-ui">
+            <div class="mock-ui-topbar">
+              <div class="mock-dot r"></div>
+              <div class="mock-dot y"></div>
+              <div class="mock-dot g"></div>
+            </div>
+            <div class="mock-ui-body">
+              <div class="mock-sidebar">
+                <div class="mock-sidebar-item active" style="width:60%"></div>
+                <div class="mock-sidebar-item" style="width:80%"></div>
+                <div class="mock-sidebar-item" style="width:45%"></div>
+                <div class="mock-sidebar-item" style="width:70%"></div>
+                <div class="mock-sidebar-item" style="width:55%"></div>
+              </div>
+              <div class="mock-main">
+                <div class="mock-chart">
+                  <div class="mock-bar" style="height:30%"></div>
+                  <div class="mock-bar" style="height:55%"></div>
+                  <div class="mock-bar" style="height:40%"></div>
+                  <div class="mock-bar" style="height:75%"></div>
+                  <div class="mock-bar" style="height:60%"></div>
+                  <div class="mock-bar" style="height:85%"></div>
+                  <div class="mock-bar" style="height:50%"></div>
+                  <div class="mock-bar" style="height:90%"></div>
+                </div>
+                <div class="mock-table">
+                  <div class="mock-row" style="width:100%"></div>
+                  <div class="mock-row" style="width:75%"></div>
+                  <div class="mock-row" style="width:85%"></div>
+                  <div class="mock-row" style="width:60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thumbnail Carousel -->
+        <div class="pdp-carousel">
+          <div class="carousel-thumb active">
+            <span class="thumb-label">Console</span>
+          </div>
+          <div class="carousel-thumb video">
+            <span class="thumb-label">Overview</span>
+          </div>
+          <div class="carousel-thumb">
+            <span class="thumb-label">Queries</span>
+          </div>
+          <div class="carousel-thumb">
+            <span class="thumb-label">Catalog</span>
+          </div>
+          <div class="carousel-thumb video">
+            <span class="thumb-label">Tutorial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Info Below Media -->
+      <div class="pdp-info">
+        <!-- Ratings -->
+        <div class="pdp-ratings">
+          <div class="stars">
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/></svg>
+            <svg class="star" viewBox="0 0 20 20"><path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/></svg>
+            <svg class="star empty" viewBox="0 0 20 20"><path d="M10 15.27L16.18 19l-1.64-7.03L20 7.24l-7.19-.61L10 0 7.19 6.63 0 7.24l5.46 4.73L3.82 19z"/></svg>
+          </div>
+          <span class="rating-text">4.2 out of 5 · 148 reviews</span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="pdp-tabs">
+          <button class="pdp-tab active">Overview</button>
+          <button class="pdp-tab">Features</button>
+          <button class="pdp-tab">Pricing</button>
+          <button class="pdp-tab">Documentation</button>
+          <button class="pdp-tab">Reviews</button>
+        </div>
+
+        <h2>About watsonx.data</h2>
+        <p class="pdp-description">
+          Fit-for-purpose data store built on an open lakehouse architecture. Query data across any environment — IBM Cloud, AWS, or Azure — using open formats and built-in governance. Reduce data warehouse costs by up to 50% through workload optimization and automated tiering. Supports Apache Iceberg, Presto, and Spark engines with a shared metadata catalog.
+        </p>
+
+        <!-- Feature Grid -->
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon"><svg viewBox="0 0 16 16"><path d="M8 0L0 4v8l8 4 8-4V4L8 0zm0 2.2L13.5 5 8 7.8 2.5 5 8 2.2z"/></svg></div>
+            <div class="feature-title">Open Lakehouse</div>
+            <div class="feature-desc">Apache Iceberg tables with Presto and Spark query engines. No proprietary lock-in.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm1 12H7V7h2v5zm0-6H7V4h2v2z"/></svg></div>
+            <div class="feature-title">Multi-Cloud Deploy</div>
+            <div class="feature-desc">Run on IBM Cloud, AWS, or Azure. Same experience, any environment.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg viewBox="0 0 16 16"><path d="M14 2H2v12h12V2zM4 12V6h2v6H4zm3 0V4h2v8H7zm3 0V8h2v4h-2z"/></svg></div>
+            <div class="feature-title">Cost Optimization</div>
+            <div class="feature-desc">Reduce warehouse costs by up to 50% through intelligent workload routing.</div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.5 4.5l-4 5.5L4 8l1-1 2 2 3-4 1.5 0.5z"/></svg></div>
+            <div class="feature-title">Built-in Governance</div>
+            <div class="feature-desc">Shared metadata catalog with access policies, lineage tracking, and compliance.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Config Card -->
+    <div class="pdp-right">
+      <div class="config-card">
+        <div class="config-card-header">
+          <div class="config-product-name">IBM watsonx</div>
+          <div class="config-title" id="pdpConfigTitle">watsonx.data</div>
+          <div class="config-badges">
+            <span class="badge badge-trial">Free Trial</span>
+            <span class="badge badge-buy">Buy Online</span>
+          </div>
+        </div>
+
+        <!-- Plan Selector -->
+        <div class="plan-selector">
+          <div class="plan-selector-label">Choose a plan</div>
+          <div class="plan-options">
+            <div class="plan-option" onclick="selectPlan(this, 'lite')">
+              <div class="plan-radio"></div>
+              <div class="plan-details">
+                <div class="plan-name">Lite</div>
+                <div class="plan-sub">1 engine, 1 TB storage</div>
+              </div>
+              <div class="plan-price-right">
+                <div class="price-amount" style="color:var(--cds-green-50)">Free</div>
+                <span class="price-unit">30-day trial</span>
+              </div>
+            </div>
+            <div class="plan-option selected" onclick="selectPlan(this, 'standard')">
+              <div class="plan-radio"></div>
+              <div class="plan-details">
+                <div class="plan-name">Standard</div>
+                <div class="plan-sub">Unlimited engines, multi-cloud</div>
+              </div>
+              <div class="plan-price-right">
+                <div class="price-amount">$1.04</div>
+                <span class="price-unit">/RU-Hour</span>
+              </div>
+              <div class="plan-tag">Popular</div>
+            </div>
+            <div class="plan-option" onclick="selectPlan(this, 'enterprise')">
+              <div class="plan-radio"></div>
+              <div class="plan-details">
+                <div class="plan-name">Enterprise</div>
+                <div class="plan-sub">Dedicated resources, SLA</div>
+              </div>
+              <div class="plan-price-right">
+                <div class="price-amount">Custom</div>
+                <span class="price-unit">Contact sales</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commitment -->
+        <div class="commitment-toggle">
+          <div class="toggle-row">
+            <span class="toggle-label">Billing</span>
+            <div class="toggle-switch">
+              <button class="toggle-opt active" onclick="setBilling('monthly', this)">Monthly</button>
+              <button class="toggle-opt" onclick="setBilling('annual', this)">Annual</button>
+            </div>
+          </div>
+          <div class="savings-note" id="savingsNote" style="display:none">Save 15% with annual commitment</div>
+        </div>
+
+        <!-- Configuration -->
+        <div class="config-options">
+          <div class="config-option">
+            <label>Cloud Provider</label>
+            <select>
+              <option>IBM Cloud — Dallas</option>
+              <option>AWS — US East (Virginia)</option>
+              <option>Azure — East US</option>
+            </select>
+          </div>
+          <div class="config-option">
+            <label>Engine Type</label>
+            <select>
+              <option>Presto — Analytics queries</option>
+              <option>Spark — Data processing</option>
+            </select>
+          </div>
+          <div class="config-option">
+            <label>Engine Size</label>
+            <select>
+              <option>Starter — 2 nodes, 8 RU/hr</option>
+              <option>Standard — 4 nodes, 16 RU/hr</option>
+              <option>Performance — 8 nodes, 32 RU/hr</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Price Summary -->
+        <div class="config-summary">
+          <div class="config-summary-row">
+            <span>Standard plan × Starter engine</span>
+            <span>$1.04 /RU-hr</span>
+          </div>
+          <div class="config-summary-row">
+            <span>Estimated 160 hrs/mo usage</span>
+            <span>$1,331</span>
+          </div>
+          <div class="config-total">
+            <span class="config-total-label">Estimated monthly</span>
+            <div>
+              <span class="config-total-price">$1,331</span>
+              <span class="config-total-unit"> /mo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="config-ctas">
+          <button class="btn-primary">
+            Start free trial
+            <svg viewBox="0 0 16 16"><path d="M8 0l-1.4 1.4L11.2 6H0v2h11.2L6.6 12.6 8 14l7-7z"/></svg>
+          </button>
+          <button class="btn-secondary">
+            Configure & buy
+          </button>
+          <button class="btn-tertiary">Contact sales for Enterprise</button>
+        </div>
+
+        <!-- Trust -->
+        <div class="config-trust">
+          <div class="trust-item">
+            <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.5 4.5l-4 5.5L4 8l1-1 2 2 3-4 1.5 0.5z"/></svg>
+            <span>99.9% SLA</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.5 4.5l-4 5.5L4 8l1-1 2 2 3-4 1.5 0.5z"/></svg>
+            <span>SOC 2 Type II</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.5 4.5l-4 5.5L4 8l1-1 2 2 3-4 1.5 0.5z"/></svg>
+            <span>GDPR Ready</span>
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.5 4.5l-4 5.5L4 8l1-1 2 2 3-4 1.5 0.5z"/></svg>
+            <span>Cancel anytime</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <svg viewBox="0 0 64 26"><rect x="0" y="0" width="64" height="3.7" fill="white"/><rect x="0" y="5.6" width="64" height="3.7" fill="white"/><rect x="0" y="11.2" width="20" height="3.7" fill="white"/><rect x="44" y="11.2" width="20" height="3.7" fill="white"/><rect x="24" y="11.2" width="16" height="3.7" fill="white"/><rect x="0" y="16.8" width="20" height="3.7" fill="white"/><rect x="44" y="16.8" width="20" height="3.7" fill="white"/><rect x="24" y="16.8" width="16" height="3.7" fill="white"/><rect x="0" y="22.4" width="64" height="3.7" fill="white"/></svg>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Accessibility</a>
+      <a href="#">Cookie Preferences</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// === PRODUCT DATA — 30 Q2 PRODUCTS ===
+const products = [
+  // eCOMM FOCUS (5)
+  { name:"SPSS Statistics", cat:"Analytics", tier:"ecomm", desc:"Statistical analysis platform for research, surveys, and predictive analytics.", price:"$99", unit:"/user/mo", trial:true, buy:true, cloud:["IBM","AWS"], color:"#0f62fe", icon:"Σ", enabled:true },
+  { name:"MaaS360", cat:"Security", tier:"ecomm", desc:"AI-driven unified endpoint management for smartphones, tablets, laptops, and IoT.", price:"$4", unit:"/device/mo", trial:true, buy:true, cloud:["IBM","AWS"], color:"#da1e28", icon:"M", enabled:true },
+  { name:"Aspera", cat:"Data Transfer", tier:"ecomm", desc:"High-speed data transfer at any scale. Move terabytes across any distance, any network.", price:"$0.95", unit:"/GB", trial:true, buy:true, cloud:["IBM","AWS"], color:"#009d9a", icon:"A", enabled:true },
+  { name:"Cognos Analytics", cat:"Analytics", tier:"ecomm", desc:"AI-powered business intelligence with automated data preparation and natural language queries.", price:"$10", unit:"/user/mo", trial:true, buy:true, cloud:["IBM"], color:"#8a3ffc", icon:"C", enabled:true },
+  { name:"NS1 Connect", cat:"Networking", tier:"ecomm", desc:"Intelligent DNS and traffic management for application performance and reliability.", price:"$250", unit:"/mo", trial:true, buy:true, cloud:["IBM","AWS"], color:"#0043ce", icon:"N", enabled:true },
+  // SELECT FOCUS (12)
+  { name:"Bob", cat:"HR", tier:"select", desc:"Modern HR platform for managing people, culture, and workplace engagement.", price:"$12", unit:"/user/mo", trial:true, buy:true, cloud:[], color:"#ee5396", icon:"B", enabled:false, launch:"Feb" },
+  { name:"Kubecost (Apptio)", cat:"FinOps", tier:"select", desc:"Kubernetes cost monitoring and optimization with real-time allocation tracking.", price:"$199", unit:"/cluster/mo", trial:true, buy:true, cloud:["AWS","Azure"], color:"#24a148", icon:"K", enabled:false, launch:"Feb" },
+  { name:"watsonx.data", cat:"AI & Data", tier:"select", desc:"Open lakehouse for analytics and AI. Query across clouds with Presto and Spark engines.", price:"$1.04", unit:"/RU-hr", trial:true, buy:true, cloud:["IBM","AWS","Azure"], color:"#0f62fe", icon:"wx", enabled:false, launch:"Feb" },
+  { name:"Planning Analytics", cat:"Analytics", tier:"select", desc:"Automated planning, budgeting, and forecasting powered by IBM TM1 engine.", price:"$150", unit:"/user/mo", trial:true, buy:true, cloud:["IBM","AWS","Azure"], color:"#002d9c", icon:"PA", enabled:false, launch:"Feb" },
+  { name:"Concert", cat:"IT Operations", tier:"select", desc:"AI-driven IT operations management for incident detection and automated remediation.", price:"$89", unit:"/mo", trial:true, buy:true, cloud:["AWS"], color:"#6929c4", icon:"Co", enabled:false, launch:"Feb" },
+  { name:"Fusion", cat:"Data Integration", tier:"select", desc:"Data fabric for seamless integration, cataloging, and governance across hybrid environments.", price:"$500", unit:"/mo", trial:true, buy:false, cloud:[], color:"#007d79", icon:"F", enabled:false, launch:"Feb" },
+  { name:"watsonx.governance", cat:"AI Governance", tier:"select", desc:"Monitor, govern, and explain AI models in production with automated compliance.", price:"$1.80", unit:"/RU-hr", trial:true, buy:true, cloud:["IBM","AWS","Azure"], color:"#0f62fe", icon:"wg", enabled:false, launch:"Mar" },
+  { name:"Terraform (Hashicorp)", cat:"DevOps", tier:"select", desc:"Infrastructure as code for provisioning and managing cloud resources at scale.", price:"$0.00055", unit:"/RU-hr", trial:true, buy:true, cloud:["AWS","Azure"], color:"#7b42bc", icon:"Tf", enabled:false, launch:"Apr" },
+  { name:"Vault (Hashicorp)", cat:"Security", tier:"select", desc:"Secrets management and data encryption for zero-trust security architectures.", price:"$0.03", unit:"/hr", trial:true, buy:true, cloud:["AWS","Azure"], color:"#ffd814", icon:"V", enabled:false, launch:"Apr" },
+  { name:"Maximo", cat:"Asset Management", tier:"select", desc:"Enterprise asset management with AI-powered predictive maintenance and IoT integration.", price:"$125", unit:"/user/mo", trial:false, buy:true, cloud:["IBM","AWS","Azure"], color:"#0043ce", icon:"Mx", enabled:false, launch:"Jul" },
+  { name:"Instana", cat:"Observability", tier:"select", desc:"Real-time application performance monitoring with automated discovery and root cause analysis.", price:"$75", unit:"/host/mo", trial:true, buy:true, cloud:["IBM","AWS","Azure"], color:"#0f62fe", icon:"In", enabled:true },
+  { name:"watsonx Orchestrate", cat:"Automation", tier:"select", desc:"AI assistant that automates complex business workflows with pre-built skills.", price:"$200", unit:"/user/mo", trial:true, buy:true, cloud:["IBM","AWS","Azure"], color:"#0f62fe", icon:"wO", enabled:true },
+  // MORE (13)
+  { name:"Learning offerings", cat:"Training", tier:"more", desc:"Digital learning platform for IBM technology certifications and skills development.", price:"$30", unit:"/user/mo", trial:true, buy:true, cloud:[], color:"#393939", icon:"L", enabled:false, launch:"Mar" },
+  { name:"Digital Asset Haven", cat:"Storage", tier:"more", desc:"Secure digital asset management with blockchain-backed provenance tracking.", price:"$45", unit:"/mo", trial:true, buy:true, cloud:[], color:"#002d9c", icon:"DA", enabled:false, launch:"Mar" },
+  { name:"Langflow", cat:"AI Development", tier:"more", desc:"Visual low-code platform for building and deploying AI applications and workflows.", price:"$29", unit:"/mo", trial:true, buy:true, cloud:[], color:"#24a148", icon:"Lf", enabled:false, launch:"Mar" },
+  { name:"Sterling", cat:"Supply Chain", tier:"more", desc:"End-to-end supply chain intelligence with real-time visibility and optimization.", price:"$500", unit:"/mo", trial:false, buy:false, cloud:["AWS"], color:"#0043ce", icon:"St", enabled:false, launch:"Mar" },
+  { name:"Envizi GHG", cat:"Sustainability", tier:"more", desc:"Carbon accounting and ESG reporting for emissions tracking and regulatory compliance.", price:"$500", unit:"/mo", trial:true, buy:true, cloud:["AWS"], color:"#24a148", icon:"E", enabled:false, launch:"Apr" },
+  { name:"SPSS Modeler", cat:"Analytics", tier:"more", desc:"Visual data science and machine learning for building predictive models without code.", price:"$99", unit:"/user/mo", trial:true, buy:true, cloud:[], color:"#0f62fe", icon:"SM", enabled:true },
+  { name:"API Connect (PayGo)", cat:"Integration", tier:"more", desc:"Full lifecycle API management platform for creating, securing, and monetizing APIs.", price:"Pay-as-you-go", unit:"", trial:false, buy:true, cloud:[], color:"#525252", icon:"AC", enabled:true },
+  { name:"Blueworks Live", cat:"Automation", tier:"more", desc:"Cloud-based business process modeling, mapping, and improvement collaboration.", price:"$53", unit:"/user/mo", trial:true, buy:true, cloud:[], color:"#0043ce", icon:"Bw", enabled:true },
+  { name:"Decision Intelligence", cat:"Automation", tier:"more", desc:"AI-powered decision automation combining business rules, ML models, and optimization.", price:"$200", unit:"/mo", trial:true, buy:true, cloud:[], color:"#6929c4", icon:"DI", enabled:true },
+  { name:"Cloud Sync", cat:"Infrastructure", tier:"more", desc:"Automated data sync and migration between cloud and on-premise environments.", price:"$0.18", unit:"/GB synced", trial:true, buy:true, cloud:["AWS"], color:"#009d9a", icon:"CS", enabled:true },
+  { name:"Hybrid Cloud Mesh", cat:"Infrastructure", tier:"more", desc:"Simplified, secure application-centric connectivity across hybrid multi-cloud.", price:"$299", unit:"/mo", trial:true, buy:true, cloud:[], color:"#002d9c", icon:"HC", enabled:true },
+  { name:"Video Streaming", cat:"Media", tier:"more", desc:"Enterprise-grade live and on-demand video streaming with built-in analytics.", price:"$0.50", unit:"/viewer/hr", trial:true, buy:true, cloud:[], color:"#da1e28", icon:"VS", enabled:true },
+  { name:"ILOG CPLEX", cat:"Optimization", tier:"more", desc:"Mathematical optimization engine for scheduling, planning, and resource allocation.", price:"$199", unit:"/mo", trial:true, buy:true, cloud:[], color:"#393939", icon:"CP", enabled:true },
+];
+
+// === RENDER PRODUCT GRID ===
+function renderGrid(filtered) {
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = '';
+  const list = filtered || products;
+  
+  list.forEach((p, i) => {
+    const badges = [];
+    if (p.trial) badges.push('<span class="badge badge-trial">Trial</span>');
+    if (p.buy) badges.push('<span class="badge badge-buy">Buy</span>');
+    if (!p.enabled && p.launch) badges.push(`<span class="badge badge-coming">${p.launch}</span>`);
+    
+    const cloudTags = p.cloud.map(c => `<span class="cloud-tag">${c === 'IBM' ? 'IBM Cloud' : c}</span>`).join('');
+    
+    const priceHtml = p.price === 'Pay-as-you-go'
+      ? '<span class="free-label">Pay-as-you-go</span>'
+      : p.price === 'Free'
+        ? '<span class="free-label">Free</span>'
+        : `From <strong>${p.price}</strong> <span class="price-unit">${p.unit}</span>`;
+    
+    const quickAction = p.trial ? 'Start free trial' : (p.buy ? 'Buy now' : 'Contact sales');
+    
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.style.animationDelay = `${Math.min(i, 8) * 0.05}s`;
+    card.setAttribute('data-tier', p.tier);
+    card.setAttribute('data-name', p.name.toLowerCase());
+    card.setAttribute('data-trial', p.trial);
+    card.setAttribute('data-buy', p.buy);
+    card.onclick = () => showPDP(p);
+    
+    card.innerHTML = `
+      <div class="card-image">
+        <div class="card-badges">${badges.join('')}</div>
+        <button class="card-quick-action" onclick="event.stopPropagation()">${quickAction}</button>
+        <div class="product-icon" style="background:${p.color}">${p.icon}</div>
+        <style>.product-card:nth-child(${i+1}) .card-image::before { background:${p.color}; }</style>
+      </div>
+      <div class="card-content">
+        <div class="card-category">${p.cat}${p.tier === 'ecomm' ? ' · eCOMM Focus' : (p.tier === 'select' ? ' · Select Focus' : '')}</div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-meta">
+          <div class="card-price">${priceHtml}</div>
+          <div class="card-cloud-tags">${cloudTags}</div>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  
+  document.getElementById('gridTitle').innerHTML = `${document.querySelector('.filter-pill.active').textContent.trim().replace(/\d+/,'')} <span>· ${list.length}</span>`;
+}
+
+// === FILTERS ===
+document.querySelectorAll('.filter-pill').forEach(pill => {
+  pill.addEventListener('click', function() {
+    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    filterProducts();
+  });
+});
+
+function filterProducts() {
+  const active = document.querySelector('.filter-pill.active').dataset.filter;
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  
+  let filtered = products;
+  if (active === 'ecomm') filtered = products.filter(p => p.tier === 'ecomm');
+  else if (active === 'select') filtered = products.filter(p => p.tier === 'select');
+  else if (active === 'more') filtered = products.filter(p => p.tier === 'more');
+  else if (active === 'trial') filtered = products.filter(p => p.trial);
+  else if (active === 'buy') filtered = products.filter(p => p.buy);
+  
+  if (search) {
+    filtered = filtered.filter(p => 
+      p.name.toLowerCase().includes(search) || 
+      p.cat.toLowerCase().includes(search) ||
+      p.desc.toLowerCase().includes(search)
+    );
+  }
+  
+  renderGrid(filtered);
+}
+
+// === PDP NAVIGATION ===
+function showPDP(product) {
+  document.getElementById('storePage').classList.add('hidden');
+  document.getElementById('pdpPage').classList.add('active');
+  document.getElementById('pdpBreadcrumbName').textContent = product.name;
+  document.getElementById('pdpConfigTitle').textContent = product.name;
+  window.scrollTo(0, 0);
+}
+
+function showStore() {
+  document.getElementById('storePage').classList.remove('hidden');
+  document.getElementById('pdpPage').classList.remove('active');
+  window.scrollTo(0, 0);
+}
+
+// === PLAN SELECTION ===
+function selectPlan(el, plan) {
+  document.querySelectorAll('.plan-option').forEach(p => p.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+// === BILLING TOGGLE ===
+function setBilling(type, el) {
+  document.querySelectorAll('.toggle-opt').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('savingsNote').style.display = type === 'annual' ? 'block' : 'none';
+}
+
+// === CAROUSEL THUMBS ===
+document.querySelectorAll('.carousel-thumb').forEach(thumb => {
+  thumb.addEventListener('click', function() {
+    document.querySelectorAll('.carousel-thumb').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// === INIT ===
+renderGrid();
+</script>
+
+</body>
+</html>

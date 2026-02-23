@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your watsonx.data Trial — 3 Days Remaining | IBM</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cds-background:#fff;--cds-background-hover:#e8e8e8;--cds-layer-01:#f4f4f4;--cds-layer-02:#fff;--cds-layer-hover-01:#e8e8e8;--cds-field-01:#f4f4f4;--cds-border-subtle-00:#e0e0e0;--cds-border-subtle-01:#c6c6c6;--cds-border-strong-01:#8d8d8d;--cds-border-interactive:#0f62fe;--cds-text-primary:#161616;--cds-text-secondary:#525252;--cds-text-placeholder:#a8a8a8;--cds-text-on-color:#fff;--cds-text-helper:#6f6f6f;--cds-link-primary:#0f62fe;--cds-link-primary-hover:#0043ce;--cds-icon-primary:#161616;--cds-icon-secondary:#525252;--cds-support-success:#198038;--cds-support-info:#0043ce;--cds-support-error:#da1e28;--cds-support-warning:#f1c21b;--cds-button-primary:#0f62fe;--cds-button-primary-hover:#0353e9;--cds-button-secondary:#393939;--cds-button-tertiary:#0f62fe;--cds-focus:#0f62fe;--cds-tag-blue:#d0e2ff;--cds-tag-green:#a7f0ba;--cds-tag-purple:#e8daff;--cds-tag-teal:#9ef0f0;--cds-tag-warm-gray:#e0e0e0;--cds-spacing-02:.25rem;--cds-spacing-03:.5rem;--cds-spacing-04:.75rem;--cds-spacing-05:1rem;--cds-spacing-06:1.5rem;--cds-spacing-07:2rem;--cds-spacing-08:2.5rem;--cds-spacing-09:3rem;--cds-spacing-10:4rem;--cds-spacing-11:5rem;--cds-spacing-12:6rem;--cds-heading-07:2.625rem;--cds-heading-06:2rem;--cds-heading-05:1.75rem;--cds-heading-04:1.5rem;--cds-heading-03:1.25rem;--cds-heading-02:1rem;--cds-heading-01:.875rem;--cds-body-02:1rem;--cds-body-01:.875rem;--cds-label-01:.75rem;--cds-helper-01:.75rem}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--cds-text-primary);background:#f4f4f4;font-size:var(--cds-body-01);line-height:1.42857;-webkit-font-smoothing:antialiased}
+.g{max-width:99rem;margin:0 auto;padding:0 1rem}
+@media(min-width:672px){.g{padding:0 2rem}}
+@media(min-width:1056px){.g{padding:0 2.5rem}}
+
+/* L0 */
+.l0{background:#161616;height:48px;display:flex;align-items:center;padding:0 1rem;z-index:9001}
+.l0 .logo{display:flex;align-items:center;padding-right:var(--cds-spacing-05);border-right:1px solid #393939;height:100%;text-decoration:none}
+.l0 .logo svg{fill:#fff;width:44px;height:16px}
+.l0 nav{display:flex;align-items:center;height:100%}
+.l0 nav a{color:#c6c6c6;text-decoration:none;font-size:var(--cds-body-01);padding:0 var(--cds-spacing-05);height:100%;display:flex;align-items:center;transition:all .11s;white-space:nowrap}
+.l0 nav a:hover{color:#fff;background:#262626}
+.l0 .u{margin-left:auto;display:flex;align-items:center;height:100%}
+.l0 .u button{background:none;border:none;color:#c6c6c6;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .11s}
+.l0 .u button:hover{background:#262626;color:#fff}
+@media(max-width:671px){.l0 nav{display:none}.l0 .logo{border-right:none}}
+
+/* L1 */
+.l1{background:#161616;height:48px;display:flex;align-items:center;padding:0 1rem;position:sticky;top:0;z-index:9000;border-top:1px solid #262626}
+.l1 .n{color:#fff;font-size:var(--cds-body-01);font-weight:600;text-decoration:none;padding-right:var(--cds-spacing-05);border-right:1px solid #393939;height:100%;display:flex;align-items:center;white-space:nowrap}
+.l1 nav{display:flex;align-items:center;height:100%;overflow-x:auto;scrollbar-width:none}
+.l1 nav::-webkit-scrollbar{display:none}
+.l1 nav a{color:#c6c6c6;text-decoration:none;font-size:var(--cds-body-01);padding:0 var(--cds-spacing-05);height:100%;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all .11s;white-space:nowrap}
+.l1 nav a:hover{color:#fff;background:#262626}
+.l1 nav a[aria-current="page"]{color:#fff;border-bottom-color:var(--cds-button-primary)}
+
+/* URGENCY BANNER */
+.ub{background:linear-gradient(90deg,#da1e28 0%,#a2191f 100%);color:#fff;padding:12px 0;text-align:center;position:relative;overflow:hidden}
+.ub::before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:repeating-linear-gradient(90deg,transparent,transparent 200px,rgba(255,255,255,.03) 200px,rgba(255,255,255,.03) 400px)}
+.ub-inner{display:flex;align-items:center;justify-content:center;gap:var(--cds-spacing-05);flex-wrap:wrap}
+.ub-clock{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:var(--cds-heading-03);font-weight:600}
+.ub-clock svg{width:20px;height:20px;fill:#fff}
+.ub-text{font-size:var(--cds-body-01);opacity:.9}
+.ub-cta{background:#fff;color:#da1e28;border:none;padding:6px 20px;font-family:'IBM Plex Sans',sans-serif;font-size:var(--cds-body-01);font-weight:600;cursor:pointer;transition:all .11s;text-decoration:none}
+.ub-cta:hover{background:#f4f4f4}
+
+/* HERO SECTION */
+.trial-hero{background:#161616;color:#fff;padding:var(--cds-spacing-09) 0 var(--cds-spacing-10);position:relative;overflow:hidden}
+.trial-hero::after{content:'';position:absolute;right:0;top:0;width:40%;height:100%;background:linear-gradient(135deg,rgba(15,98,254,.12),transparent);clip-path:polygon(30% 0,100% 0,100% 100%,0 100%)}
+.th-grid{display:grid;grid-template-columns:1fr auto;gap:var(--cds-spacing-09);align-items:center;position:relative;z-index:2}
+@media(max-width:1055px){.th-grid{grid-template-columns:1fr}}
+.th-eyebrow{font-size:var(--cds-label-01);color:#c6c6c6;text-transform:uppercase;letter-spacing:.32px;margin-bottom:var(--cds-spacing-03);display:flex;align-items:center;gap:var(--cds-spacing-03)}
+.th-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--cds-support-warning);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.th-title{font-size:var(--cds-heading-07);font-weight:300;line-height:1.19;margin-bottom:var(--cds-spacing-05)}
+@media(max-width:671px){.th-title{font-size:var(--cds-heading-05)}}
+.th-sub{font-size:var(--cds-heading-03);font-weight:300;color:#c6c6c6;max-width:560px;line-height:1.4;margin-bottom:var(--cds-spacing-07)}
+
+/* Countdown ring */
+.countdown{display:flex;flex-direction:column;align-items:center;gap:var(--cds-spacing-05)}
+@media(max-width:1055px){.countdown{flex-direction:row;justify-content:flex-start}}
+.ring-wrap{position:relative;width:180px;height:180px}
+@media(max-width:671px){.ring-wrap{width:120px;height:120px}}
+.ring-bg{fill:none;stroke:#393939;stroke-width:6}
+.ring-fg{fill:none;stroke:var(--cds-support-warning);stroke-width:6;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;stroke-dasharray:502;stroke-dashoffset:452;transition:stroke-dashoffset 1s ease}
+.ring-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.ring-num{font-size:var(--cds-heading-06);font-weight:300;font-family:'IBM Plex Mono',monospace;display:block;color:var(--cds-support-warning)}
+.ring-lbl{font-size:var(--cds-label-01);color:#6f6f6f;text-transform:uppercase;letter-spacing:.32px}
+.trial-dates{text-align:center;font-size:var(--cds-label-01);color:#6f6f6f}
+@media(max-width:1055px){.trial-dates{text-align:left}}
+.trial-dates span{display:block}
+
+/* VALUE METRICS */
+.val-section{margin-top:-48px;position:relative;z-index:3;padding-bottom:var(--cds-spacing-09)}
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cds-border-subtle-00);border-radius:0}
+@media(max-width:1055px){.val-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.val-grid{grid-template-columns:1fr}}
+.val-card{background:#fff;padding:var(--cds-spacing-06);position:relative;overflow:hidden}
+.val-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px}
+.val-card:nth-child(1)::before{background:var(--cds-button-primary)}
+.val-card:nth-child(2)::before{background:var(--cds-support-success)}
+.val-card:nth-child(3)::before{background:#8a3ffc}
+.val-card:nth-child(4)::before{background:#ee5396}
+.val-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--cds-spacing-04)}
+.val-icon svg{width:18px;height:18px;fill:#fff}
+.val-label{font-size:var(--cds-label-01);color:var(--cds-text-helper);text-transform:uppercase;letter-spacing:.32px;margin-bottom:var(--cds-spacing-02)}
+.val-num{font-size:var(--cds-heading-05);font-weight:300;font-family:'IBM Plex Mono',monospace;margin-bottom:2px}
+.val-sub{font-size:var(--cds-body-01);color:var(--cds-text-secondary)}
+.val-bar{height:4px;background:var(--cds-border-subtle-00);border-radius:2px;margin-top:var(--cds-spacing-04);overflow:hidden}
+.val-bar-fill{height:100%;border-radius:2px;transition:width 1.5s ease}
+.vb1{background:var(--cds-button-primary);width:73%}
+.vb2{background:var(--cds-support-success);width:88%}
+.vb3{background:#8a3ffc;width:62%}
+.vb4{background:#ee5396;width:45%}
+
+/* USAGE TIMELINE */
+.usage-section{background:#fff;padding:var(--cds-spacing-09) 0;border-bottom:1px solid var(--cds-border-subtle-00)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:var(--cds-spacing-07);flex-wrap:wrap;gap:var(--cds-spacing-04)}
+.section-title{font-size:var(--cds-heading-04);font-weight:400}
+.section-sub{font-size:var(--cds-body-01);color:var(--cds-text-secondary);max-width:480px}
+.timeline{display:flex;gap:1px;background:var(--cds-border-subtle-00);height:200px;align-items:flex-end}
+@media(max-width:671px){.timeline{height:140px}}
+.t-bar{flex:1;background:var(--cds-layer-01);position:relative;display:flex;flex-direction:column;justify-content:flex-end;transition:background .15s;cursor:default;min-width:0}
+.t-bar:hover{background:var(--cds-layer-hover-01)}
+.t-fill{background:linear-gradient(180deg,var(--cds-button-primary),#0043ce);transition:height 1s ease;border-radius:2px 2px 0 0;position:relative}
+.t-bar:hover .t-fill{background:linear-gradient(180deg,#0353e9,#002d9c)}
+.t-label{font-size:9px;color:var(--cds-text-helper);text-align:center;padding:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-bar:hover .t-tip{display:block}
+.t-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#161616;color:#fff;padding:6px 10px;font-size:var(--cds-label-01);white-space:nowrap;border-radius:2px;z-index:10}
+.t-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:4px solid transparent;border-top-color:#161616}
+.t-today{border:2px solid var(--cds-support-warning);border-bottom:none}
+.t-today .t-label{color:var(--cds-support-warning);font-weight:600}
+
+/* WHAT YOU LOSE */
+.lose-section{background:#161616;color:#fff;padding:var(--cds-spacing-09) 0}
+.lose-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--cds-spacing-06)}
+@media(max-width:1055px){.lose-grid{grid-template-columns:1fr}}
+.lose-card{background:#262626;padding:var(--cds-spacing-06);border-left:3px solid var(--cds-support-error);position:relative}
+.lose-card h3{font-size:var(--cds-heading-02);font-weight:600;margin-bottom:var(--cds-spacing-03);display:flex;align-items:center;gap:var(--cds-spacing-03)}
+.lose-card h3 svg{width:18px;height:18px;fill:var(--cds-support-error);flex-shrink:0}
+.lose-card p{font-size:var(--cds-body-01);color:#c6c6c6;line-height:1.5}
+.lose-card .val{font-size:var(--cds-heading-03);font-family:'IBM Plex Mono',monospace;color:var(--cds-support-error);display:block;margin-top:var(--cds-spacing-04)}
+
+/* SOCIAL PROOF */
+.proof-section{background:#fff;padding:var(--cds-spacing-09) 0;border-bottom:1px solid var(--cds-border-subtle-00)}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--cds-spacing-07);align-items:center}
+@media(max-width:1055px){.proof-grid{grid-template-columns:1fr}}
+.proof-stat{text-align:center}
+.proof-ring{position:relative;width:220px;height:220px;margin:0 auto var(--cds-spacing-06)}
+@media(max-width:671px){.proof-ring{width:160px;height:160px}}
+.proof-ring svg{width:100%;height:100%}
+.pr-bg{fill:none;stroke:#e0e0e0;stroke-width:8}
+.pr-fg{fill:none;stroke:var(--cds-support-success);stroke-width:8;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;stroke-dasharray:628;stroke-dashoffset:138;transition:stroke-dashoffset 2s ease}
+.proof-pct{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.proof-pct .num{font-size:var(--cds-heading-06);font-weight:300;font-family:'IBM Plex Mono',monospace;display:block;color:var(--cds-support-success)}
+.proof-pct .lbl{font-size:var(--cds-label-01);color:var(--cds-text-helper);text-transform:uppercase;letter-spacing:.32px}
+.proof-caption{font-size:var(--cds-heading-03);font-weight:400;text-align:center;max-width:300px;margin:0 auto}
+.proof-caption strong{color:var(--cds-support-success)}
+.proof-plans .pp-title{font-size:var(--cds-heading-02);font-weight:600;margin-bottom:var(--cds-spacing-05)}
+.pp-bar-row{display:flex;align-items:center;gap:var(--cds-spacing-04);margin-bottom:var(--cds-spacing-04)}
+.pp-label{font-size:var(--cds-body-01);min-width:80px;font-weight:500}
+.pp-bar-bg{flex:1;height:28px;background:var(--cds-layer-01);position:relative;overflow:hidden;border-radius:0}
+.pp-bar-val{height:100%;display:flex;align-items:center;padding-left:8px;font-size:var(--cds-label-01);color:#fff;font-weight:600;font-family:'IBM Plex Mono',monospace;transition:width 1.5s ease;border-radius:0}
+.pp-std{background:var(--cds-button-primary)}
+.pp-ent{background:var(--cds-button-secondary)}
+.pp-lite{background:#c6c6c6;color:var(--cds-text-primary)}
+.pp-rec{position:absolute;right:0;top:-18px;background:var(--cds-button-primary);color:#fff;font-size:9px;padding:1px 6px;text-transform:uppercase;font-weight:600;letter-spacing:.32px}
+
+/* PLAN CARDS */
+.plan-section{padding:var(--cds-spacing-09) 0 var(--cds-spacing-10);background:var(--cds-layer-01)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--cds-border-subtle-00)}
+@media(max-width:672px){.plans{grid-template-columns:1fr}}
+.plan{background:#fff;padding:var(--cds-spacing-07);display:flex;flex-direction:column;position:relative}
+.plan.rec{background:#fff}
+.plan.rec::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--cds-button-primary)}
+.plan-badge{position:absolute;top:var(--cds-spacing-05);right:var(--cds-spacing-05);font-size:10px;text-transform:uppercase;letter-spacing:.32px;font-weight:600;padding:2px 8px}
+.plan-badge.pop{background:var(--cds-button-primary);color:#fff}
+.plan-badge.cur{background:var(--cds-tag-warm-gray);color:var(--cds-text-secondary)}
+.plan-name{font-size:var(--cds-heading-03);font-weight:600;margin-bottom:var(--cds-spacing-03)}
+.plan-desc{font-size:var(--cds-body-01);color:var(--cds-text-secondary);margin-bottom:var(--cds-spacing-06);flex-grow:1}
+.plan-price{font-size:var(--cds-heading-05);font-weight:300;margin-bottom:2px}
+.plan-price .cur{font-size:var(--cds-heading-03);vertical-align:super}
+.plan-price .per{font-size:var(--cds-body-01);color:var(--cds-text-secondary);font-weight:400}
+.plan-note{font-size:var(--cds-helper-01);color:var(--cds-text-helper);margin-bottom:var(--cds-spacing-06)}
+.plan-features{list-style:none;margin-bottom:var(--cds-spacing-07);border-top:1px solid var(--cds-border-subtle-00);padding-top:var(--cds-spacing-05)}
+.plan-features li{font-size:var(--cds-body-01);padding:var(--cds-spacing-02) 0;display:flex;align-items:center;gap:var(--cds-spacing-03)}
+.plan-features li svg{fill:var(--cds-support-success);width:14px;height:14px;flex-shrink:0}
+.plan-features li.lost{color:var(--cds-support-error);text-decoration:line-through;opacity:.6}
+.plan-features li.lost svg{fill:var(--cds-support-error)}
+.plan-cta{margin-top:auto}
+
+/* INCENTIVE BANNER */
+.incentive{background:linear-gradient(135deg,#001d6c,#002d9c,#0043ce);color:#fff;padding:var(--cds-spacing-09) 0;position:relative;overflow:hidden;text-align:center}
+.incentive::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;border-radius:50%;background:rgba(15,98,254,.2);filter:blur(60px)}
+.incentive::after{content:'';position:absolute;bottom:-30%;left:-5%;width:300px;height:300px;border-radius:50%;background:rgba(138,63,252,.15);filter:blur(50px)}
+.inc-inner{position:relative;z-index:2;max-width:680px;margin:0 auto}
+.inc-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);padding:4px 14px;border-radius:24px;font-size:var(--cds-label-01);font-weight:600;text-transform:uppercase;letter-spacing:.32px;margin-bottom:var(--cds-spacing-06)}
+.inc-badge svg{width:14px;height:14px;fill:var(--cds-support-warning)}
+.inc-title{font-size:var(--cds-heading-06);font-weight:300;margin-bottom:var(--cds-spacing-05)}
+@media(max-width:671px){.inc-title{font-size:var(--cds-heading-04)}}
+.inc-offer{display:flex;align-items:center;justify-content:center;gap:var(--cds-spacing-06);margin-bottom:var(--cds-spacing-05);flex-wrap:wrap}
+.inc-pct{font-size:72px;font-weight:700;font-family:'IBM Plex Mono',monospace;line-height:1;background:linear-gradient(180deg,#fff,#a6c8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+@media(max-width:671px){.inc-pct{font-size:48px}}
+.inc-detail{text-align:left;font-size:var(--cds-heading-03);font-weight:300;line-height:1.4;max-width:280px}
+.inc-detail strong{font-weight:600;color:#a6c8ff}
+.inc-timer{display:flex;align-items:center;justify-content:center;gap:var(--cds-spacing-05);margin-bottom:var(--cds-spacing-07)}
+.inc-t-block{text-align:center}
+.inc-t-num{font-size:var(--cds-heading-05);font-weight:600;font-family:'IBM Plex Mono',monospace;background:rgba(0,0,0,.3);padding:6px 12px;display:block;margin-bottom:2px;border-radius:2px}
+.inc-t-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.32px;color:#a6c8ff}
+.inc-t-sep{font-size:var(--cds-heading-05);color:#a6c8ff;padding-bottom:18px}
+.inc-ctas{display:flex;align-items:center;justify-content:center;gap:var(--cds-spacing-05);flex-wrap:wrap}
+.inc-fine{font-size:var(--cds-helper-01);color:#a6c8ff;margin-top:var(--cds-spacing-05)}
+
+/* TESTIMONIALS */
+.test-section{background:#fff;padding:var(--cds-spacing-09) 0;border-bottom:1px solid var(--cds-border-subtle-00)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--cds-spacing-06)}
+@media(max-width:1055px){.test-grid{grid-template-columns:1fr}}
+.test-card{background:var(--cds-layer-01);padding:var(--cds-spacing-06);border-left:3px solid var(--cds-border-interactive)}
+.test-stars{display:flex;gap:2px;margin-bottom:var(--cds-spacing-04)}
+.test-stars svg{width:14px;height:14px;fill:var(--cds-support-warning)}
+.test-quote{font-size:var(--cds-body-02);font-style:italic;color:var(--cds-text-secondary);line-height:1.5;margin-bottom:var(--cds-spacing-05)}
+.test-author{font-size:var(--cds-body-01);font-weight:600}
+.test-role{font-size:var(--cds-label-01);color:var(--cds-text-helper)}
+.test-metric{font-size:var(--cds-heading-01);font-weight:600;color:var(--cds-support-success);margin-top:var(--cds-spacing-04);display:flex;align-items:center;gap:4px}
+.test-metric svg{width:14px;height:14px;fill:var(--cds-support-success)}
+
+/* FAQ */
+.faq-section{padding:var(--cds-spacing-09) 0;background:var(--cds-layer-01)}
+.faq{max-width:720px;margin:0 auto}
+.faq-item{background:#fff;border-bottom:1px solid var(--cds-border-subtle-00)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:var(--cds-spacing-05) var(--cds-spacing-06);background:none;border:none;font-family:'IBM Plex Sans',sans-serif;font-size:var(--cds-body-01);font-weight:600;color:var(--cds-text-primary);cursor:pointer;text-align:left}
+.faq-q:hover{background:var(--cds-layer-hover-01)}
+.faq-q:focus-visible{outline:2px solid var(--cds-focus);outline-offset:-2px}
+.faq-q svg{fill:var(--cds-icon-primary);width:16px;height:16px;flex-shrink:0;transition:transform .2s}
+.faq-item.open .faq-q svg{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 var(--cds-spacing-06) var(--cds-spacing-06);font-size:var(--cds-body-01);color:var(--cds-text-secondary);line-height:1.5}
+.faq-item.open .faq-a{display:block}
+
+/* STICKY FOOTER CTA */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--cds-border-subtle-00);padding:12px 0;z-index:8000;box-shadow:0 -4px 16px rgba(0,0,0,.08);transform:translateY(0);transition:transform .3s}
+.sc-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--cds-spacing-05);flex-wrap:wrap}
+.sc-left{display:flex;align-items:center;gap:var(--cds-spacing-05)}
+.sc-badge{background:var(--cds-support-error);color:#fff;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.32px;padding:3px 8px;white-space:nowrap;animation:pulse 2s infinite}
+.sc-text{font-size:var(--cds-body-01);color:var(--cds-text-secondary)}
+.sc-text strong{color:var(--cds-text-primary)}
+.sc-right{display:flex;align-items:center;gap:var(--cds-spacing-04)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--cds-spacing-03);padding:11px 60px 11px 16px;font-family:'IBM Plex Sans',sans-serif;font-size:var(--cds-body-01);font-weight:400;cursor:pointer;border:none;position:relative;min-height:48px;transition:background 70ms;text-decoration:none;white-space:nowrap}
+.btn svg{position:absolute;right:16px;width:16px;height:16px;fill:currentColor}
+.btn-p{background:var(--cds-button-primary);color:#fff}
+.btn-p:hover{background:var(--cds-button-primary-hover)}
+.btn-s{background:var(--cds-button-secondary);color:#fff}
+.btn-s:hover{background:#474747}
+.btn-t{background:transparent;color:var(--cds-button-tertiary);border:1px solid var(--cds-button-tertiary)}
+.btn-t:hover{background:var(--cds-button-primary);color:#fff}
+.btn-g{background:transparent;color:var(--cds-link-primary);padding:11px 16px}
+.btn-g:hover{background:var(--cds-background-hover)}
+.btn-w{background:#fff;color:var(--cds-button-primary);font-weight:600}
+.btn-w:hover{background:#e8e8e8}
+.btn-d{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.btn-d:hover{background:rgba(255,255,255,.25)}
+.btn:focus-visible{outline:2px solid var(--cds-focus);outline-offset:-2px}
+
+/* BOTTOM SPACER for sticky footer */
+.spacer{height:80px}
+
+*:focus-visible{outline:2px solid var(--cds-focus);outline-offset:-2px}
+</style>
+</head>
+<body>
+
+<!-- L0 Masthead -->
+<div class="l0" role="banner">
+  <a href="https://www.ibm.com" class="logo" aria-label="IBM"><svg viewBox="0 0 44 16"><path d="M0 0h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 2.6h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM2.1 5.2h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM2.1 7.8h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM0 10.4h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 13h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM26 0h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 2.6h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM28.1 5.2h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM28.1 7.8h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM26 10.4h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 13h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35z"/></svg></a>
+  <nav aria-label="IBM"><a href="#">Products</a><a href="#">Solutions</a><a href="#">Support</a></nav>
+  <div class="u"><button aria-label="Search"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M29 27.586l-7.552-7.552a11.018 11.018 0 10-1.414 1.414L27.586 29zM4 13a9 9 0 119 9 9.01 9.01 0 01-9-9z"/></svg></button><button aria-label="Profile"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7 7 7 0 00-7-7zM26 30h-2v-5a5 5 0 00-5-5h-6a5 5 0 00-5 5v5H6v-5a7 7 0 017-7h6a7 7 0 017 7z"/></svg></button></div>
+</div>
+
+<!-- L1 Ecosystem Bar -->
+<header class="l1"><a href="#" class="n">watsonx.data</a><nav aria-label="Product"><a href="#">Overview</a><a href="#">Console</a><a href="#" aria-current="page">Your Trial</a><a href="#">Documentation</a><a href="#">Support</a></nav></header>
+
+<!-- URGENCY BANNER -->
+<div class="ub" role="alert" aria-live="assertive">
+  <div class="g">
+    <div class="ub-inner">
+      <div class="ub-clock"><svg viewBox="0 0 32 32"><path d="M16 4a12 12 0 1012 12A12 12 0 0016 4zm0 22a10 10 0 1110-10 10 10 0 01-10 10z"/><path d="M17 9h-2v8.414l5.293 5.293 1.414-1.414L17 16.586z"/></svg> 3 days remaining</div>
+      <span class="ub-text">Your free trial expires February 24, 2026</span>
+      <a href="#plans" class="ub-cta">Subscribe now — Save 20%</a>
+    </div>
+  </div>
+</div>
+
+<!-- TRIAL HERO -->
+<section class="trial-hero">
+  <div class="g">
+    <div class="th-grid">
+      <div>
+        <div class="th-eyebrow"><span class="dot"></span> Trial ending soon</div>
+        <h1 class="th-title">You've accomplished a lot in 27 days</h1>
+        <p class="th-sub">Here's what watsonx.data has delivered for your team during this trial — and what you'll keep when you subscribe.</p>
+        <a href="#plans" class="btn btn-p" style="margin-right:12px">Subscribe now <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+        <a href="#" class="btn btn-d">Extend trial</a>
+      </div>
+      <div class="countdown" aria-label="3 days remaining in trial">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 180 180"><circle class="ring-bg" cx="90" cy="90" r="80"/><circle class="ring-fg" cx="90" cy="90" r="80"/></svg>
+          <div class="ring-text"><span class="ring-num">3</span><span class="ring-lbl">Days left</span></div>
+        </div>
+        <div class="trial-dates"><span>Started: Jan 28, 2026</span><span>Expires: Feb 24, 2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE DELIVERED METRICS -->
+<section class="val-section" aria-label="Value delivered during trial">
+  <div class="g">
+    <div class="val-grid">
+      <div class="val-card">
+        <div class="val-icon" style="background:linear-gradient(135deg,#0f62fe,#0043ce)"><svg viewBox="0 0 32 32"><path d="M27 5H5a3 3 0 00-3 3v16a3 3 0 003 3h22a3 3 0 003-3V8a3 3 0 00-3-3zm1 19a1 1 0 01-1 1H5a1 1 0 01-1-1V11h24z"/></svg></div>
+        <div class="val-label">Data processed</div>
+        <div class="val-num">2.4 TB</div>
+        <div class="val-sub">Across 3 Presto engines</div>
+        <div class="val-bar"><div class="val-bar-fill vb1" style="width:0" data-w="73%"></div></div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon" style="background:linear-gradient(135deg,#42be65,#198038)"><svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/><path d="M17 9h-2v8.414l5.293 5.293 1.414-1.414L17 16.586z"/></svg></div>
+        <div class="val-label">Time saved</div>
+        <div class="val-num">142 hrs</div>
+        <div class="val-sub">vs. manual data pipeline management</div>
+        <div class="val-bar"><div class="val-bar-fill vb2" style="width:0" data-w="88%"></div></div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon" style="background:linear-gradient(135deg,#8a3ffc,#6929c4)"><svg viewBox="0 0 32 32"><path d="M4 2v26a2 2 0 002 2h24v-2H6V2z"/><path d="M30 9h-7v2h3.59L19 18.59l-4.29-4.3a1 1 0 00-1.42 0L8 19.59 9.41 21 14 16.41l4.29 4.3a1 1 0 001.42 0L28 12.41V16h2z"/></svg></div>
+        <div class="val-label">Queries executed</div>
+        <div class="val-num">18,340</div>
+        <div class="val-sub">With 99.7% success rate</div>
+        <div class="val-bar"><div class="val-bar-fill vb3" style="width:0" data-w="62%"></div></div>
+      </div>
+      <div class="val-card">
+        <div class="val-icon" style="background:linear-gradient(135deg,#ee5396,#9f1853)"><svg viewBox="0 0 32 32"><path d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7 7 7 0 00-7-7zM26 30h-2v-5a5 5 0 00-5-5h-6a5 5 0 00-5 5v5H6v-5a7 7 0 017-7h6a7 7 0 017 7z"/></svg></div>
+        <div class="val-label">Team members active</div>
+        <div class="val-num">8</div>
+        <div class="val-sub">Using shared catalog daily</div>
+        <div class="val-bar"><div class="val-bar-fill vb4" style="width:0" data-w="45%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USAGE TIMELINE -->
+<section class="usage-section">
+  <div class="g">
+    <div class="section-head">
+      <div><h2 class="section-title">Your 30-day usage</h2><p class="section-sub">Query volume over your trial period shows growing adoption and team reliance.</p></div>
+    </div>
+    <div class="timeline" role="img" aria-label="Daily query volume chart showing increasing usage over 30 days">
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="12%"><div class="t-tip">Day 1: 89 queries</div></div><div class="t-label">1</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="8%"><div class="t-tip">Day 2: 62 queries</div></div><div class="t-label">2</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="18%"><div class="t-tip">Day 3: 145 queries</div></div><div class="t-label">3</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="22%"><div class="t-tip">Day 4: 198 queries</div></div><div class="t-label">4</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="15%"><div class="t-tip">Day 5: 134 queries</div></div><div class="t-label">5</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="28%"><div class="t-tip">Day 6: 267 queries</div></div><div class="t-label">6</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="35%"><div class="t-tip">Day 7: 341 queries</div></div><div class="t-label">7</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="30%"><div class="t-tip">Day 8: 289 queries</div></div><div class="t-label">8</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="42%"><div class="t-tip">Day 9: 410 queries</div></div><div class="t-label">9</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="38%"><div class="t-tip">Day 10: 372 queries</div></div><div class="t-label">10</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="45%"><div class="t-tip">Day 11: 445 queries</div></div><div class="t-label">11</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="50%"><div class="t-tip">Day 12: 498 queries</div></div><div class="t-label">12</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="48%"><div class="t-tip">Day 13: 467 queries</div></div><div class="t-label">13</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="55%"><div class="t-tip">Day 14: 534 queries</div></div><div class="t-label">14</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="52%"><div class="t-tip">Day 15: 512 queries</div></div><div class="t-label">15</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="60%"><div class="t-tip">Day 16: 589 queries</div></div><div class="t-label">16</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="58%"><div class="t-tip">Day 17: 567 queries</div></div><div class="t-label">17</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="65%"><div class="t-tip">Day 18: 634 queries</div></div><div class="t-label">18</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="62%"><div class="t-tip">Day 19: 612 queries</div></div><div class="t-label">19</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="70%"><div class="t-tip">Day 20: 687 queries</div></div><div class="t-label">20</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="68%"><div class="t-tip">Day 21: 665 queries</div></div><div class="t-label">21</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="75%"><div class="t-tip">Day 22: 734 queries</div></div><div class="t-label">22</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="80%"><div class="t-tip">Day 23: 789 queries</div></div><div class="t-label">23</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="78%"><div class="t-tip">Day 24: 767 queries</div></div><div class="t-label">24</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="85%"><div class="t-tip">Day 25: 834 queries</div></div><div class="t-label">25</div></div>
+      <div class="t-bar"><div class="t-fill" style="height:0" data-h="90%"><div class="t-tip">Day 26: 889 queries</div></div><div class="t-label">26</div></div>
+      <div class="t-bar t-today"><div class="t-fill" style="height:0" data-h="88%"><div class="t-tip">Today: 862 queries</div></div><div class="t-label">27</div></div>
+      <div class="t-bar" style="opacity:.3"><div class="t-fill" style="height:0"></div><div class="t-label">28</div></div>
+      <div class="t-bar" style="opacity:.2"><div class="t-fill" style="height:0"></div><div class="t-label">29</div></div>
+      <div class="t-bar" style="opacity:.1"><div class="t-fill" style="height:0"></div><div class="t-label">30</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU LOSE -->
+<section class="lose-section" aria-label="What you lose when trial expires">
+  <div class="g">
+    <h2 style="font-size:var(--cds-heading-04);font-weight:400;margin-bottom:var(--cds-spacing-07);color:#fff">When your trial ends, you lose access to:</h2>
+    <div class="lose-grid">
+      <div class="lose-card">
+        <h3><svg viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9 23 10.6 17.6 16 23 21.4z"/></svg>2.4 TB of processed data</h3>
+        <p>All lakehouse tables, Iceberg catalog entries, and query history from your trial will be archived.</p>
+        <span class="val">~$18,400 in data pipeline value</span>
+      </div>
+      <div class="lose-card">
+        <h3><svg viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9 23 10.6 17.6 16 23 21.4z"/></svg>3 configured Presto engines</h3>
+        <p>Your tuned query engines, saved configurations, and performance optimizations will be removed.</p>
+        <span class="val">~36 hours of setup time</span>
+      </div>
+      <div class="lose-card">
+        <h3><svg viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9 23 10.6 17.6 16 23 21.4z"/></svg>8 team member connections</h3>
+        <p>Shared access, role assignments, and collaborative workflows for your 8 active users will end.</p>
+        <span class="val">Team productivity impact: 142 hrs/mo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section" aria-label="What other trial users chose">
+  <div class="g">
+    <h2 class="section-title" style="margin-bottom:var(--cds-spacing-07)">What trial users like you choose</h2>
+    <div class="proof-grid">
+      <div class="proof-stat">
+        <div class="proof-ring">
+          <svg viewBox="0 0 220 220"><circle class="pr-bg" cx="110" cy="110" r="100"/><circle class="pr-fg" cx="110" cy="110" r="100"/></svg>
+          <div class="proof-pct"><span class="num">78%</span><span class="lbl">of trial users</span></div>
+        </div>
+        <p class="proof-caption">of trial users convert to a <strong>paid subscription</strong> within 7 days of trial end</p>
+      </div>
+      <div class="proof-plans">
+        <div class="pp-title">Most popular plan after trial</div>
+        <div class="pp-bar-row">
+          <span class="pp-label">Standard</span>
+          <div class="pp-bar-bg"><div class="pp-bar-val pp-std" style="width:0" data-w="68%">68%</div><div class="pp-rec">Most popular</div></div>
+        </div>
+        <div class="pp-bar-row">
+          <span class="pp-label">Enterprise</span>
+          <div class="pp-bar-bg"><div class="pp-bar-val pp-ent" style="width:0" data-w="24%">24%</div></div>
+        </div>
+        <div class="pp-bar-row">
+          <span class="pp-label">Lite (free)</span>
+          <div class="pp-bar-bg"><div class="pp-bar-val pp-lite" style="width:0" data-w="8%">8%</div></div>
+        </div>
+        <div style="margin-top:var(--cds-spacing-06);padding:var(--cds-spacing-05);background:#edf5ff;border-left:3px solid var(--cds-support-info)">
+          <div style="font-size:var(--cds-body-01);color:var(--cds-text-secondary)"><strong style="color:var(--cds-support-info)">Based on your usage</strong> — Your data volume and team size align with <strong>Standard plan</strong> customers who process 1–5 TB/month.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN COMPARISON -->
+<section class="plan-section" id="plans" aria-label="Choose your plan">
+  <div class="g">
+    <h2 class="section-title" style="margin-bottom:var(--cds-spacing-03)">Continue with the right plan</h2>
+    <p style="font-size:var(--cds-body-01);color:var(--cds-text-secondary);margin-bottom:var(--cds-spacing-07);max-width:560px">Subscribe before Feb 24 and get <strong style="color:var(--cds-support-success)">20% off your first 3 months</strong> on any plan. Your data and configuration transfer instantly.</p>
+    <div class="plans">
+      <div class="plan">
+        <span class="plan-badge cur">Current trial</span>
+        <div class="plan-name">Lite</div>
+        <div class="plan-desc">Stay on free tier with limited resources. Some trial features will be removed.</div>
+        <div class="plan-price">Free</div>
+        <div class="plan-note">Limited to 1 engine, 1 TB storage</div>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>1 Presto engine, 2 nodes</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>1 TB storage included</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>IBM Cloud only</li>
+          <li class="lost"><svg viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9 23 10.6 17.6 16 23 21.4z"/></svg>No multi-cloud deployment</li>
+          <li class="lost"><svg viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9 23 10.6 17.6 16 23 21.4z"/></svg>No SLA guarantee</li>
+          <li class="lost"><svg viewBox="0 0 32 32"><path d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14 14-6.2 14-14S23.8 2 16 2zm5.4 21L16 17.6 10.6 23 9 21.4l5.4-5.4L9 10.6 10.6 9l5.4 5.4L21.4 9 23 10.6 17.6 16 23 21.4z"/></svg>2.4 TB data archived</li>
+        </ul>
+        <div class="plan-cta"><a class="btn btn-t" href="#">Downgrade to Lite</a></div>
+      </div>
+      <div class="plan rec">
+        <span class="plan-badge pop">Recommended</span>
+        <div class="plan-name">Standard</div>
+        <div class="plan-desc">Keep everything from your trial. Scale with production workloads across clouds.</div>
+        <div class="plan-price"><span style="text-decoration:line-through;color:var(--cds-text-helper);font-size:var(--cds-heading-03)">$1.04</span> <span class="cur">$</span>0.83 <span class="per">/ RU-Hour</span></div>
+        <div class="plan-note" style="color:var(--cds-support-success);font-weight:600">20% off for first 3 months · Then $1.04 /RU-Hour</div>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg><strong>Keep all 2.4 TB + 3 engines</strong></li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Unlimited engines &amp; nodes</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>AWS, Azure, IBM Cloud</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>99.9% SLA guaranteed</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Standard support included</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Save 15% with annual billing</li>
+        </ul>
+        <div class="plan-cta"><a class="btn btn-p" href="wednesday-checkout.html" style="width:100%;padding-right:16px;justify-content:center">Subscribe to Standard <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a></div>
+      </div>
+      <div class="plan">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-desc">Dedicated resources, custom SLAs, premium support, and volume discounts.</div>
+        <div class="plan-price">Custom</div>
+        <div class="plan-note">Volume-based committed spend</div>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Everything in Standard</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Dedicated cluster resources</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>99.99% SLA + Premium support</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Technical Account Manager</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Custom compliance &amp; security</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415z"/></svg>Volume pricing discounts</li>
+        </ul>
+        <div class="plan-cta"><a class="btn btn-s" href="#">Contact sales</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCENTIVE BANNER -->
+<section class="incentive" aria-label="Limited time offer">
+  <div class="g">
+    <div class="inc-inner">
+      <div class="inc-badge"><svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/><path d="M17 9h-2v8.414l5.293 5.293 1.414-1.414L17 16.586z"/></svg>Limited time offer</div>
+      <h2 class="inc-title">Subscribe in the next 3 days and save</h2>
+      <div class="inc-offer">
+        <div class="inc-pct">20%</div>
+        <div class="inc-detail">off your <strong>first 3 months</strong> on Standard or Enterprise plans. Annual subscribers save an additional 15%.</div>
+      </div>
+      <div class="inc-timer" aria-label="Offer expires in 3 days, 14 hours, 22 minutes">
+        <div class="inc-t-block"><span class="inc-t-num">03</span><span class="inc-t-lbl">Days</span></div>
+        <span class="inc-t-sep">:</span>
+        <div class="inc-t-block"><span class="inc-t-num">14</span><span class="inc-t-lbl">Hours</span></div>
+        <span class="inc-t-sep">:</span>
+        <div class="inc-t-block"><span class="inc-t-num">22</span><span class="inc-t-lbl">Mins</span></div>
+        <span class="inc-t-sep">:</span>
+        <div class="inc-t-block"><span class="inc-t-num" id="sec">47</span><span class="inc-t-lbl">Secs</span></div>
+      </div>
+      <div class="inc-ctas">
+        <a class="btn btn-w" href="wednesday-checkout.html" style="font-size:1rem;min-height:48px">Subscribe now — Save 20% <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+        <a class="btn btn-d" href="#">Talk to sales</a>
+      </div>
+      <p class="inc-fine">Offer valid for new subscriptions starting before Feb 24, 2026. 20% discount applies to first 3 months only. Cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="test-section" aria-label="Customer testimonials">
+  <div class="g">
+    <h2 class="section-title" style="margin-bottom:var(--cds-spacing-07)">From trial to production</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-stars"><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg></div>
+        <p class="test-quote">"We went from trial to processing 12TB/month in under a week. The migration from our trial was completely seamless."</p>
+        <div class="test-author">Sarah Chen</div>
+        <div class="test-role">VP of Data Engineering, Meridian Financial</div>
+        <div class="test-metric"><svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg>50% reduction in warehouse costs</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars"><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg></div>
+        <p class="test-quote">"The open Iceberg format gave us confidence there's no lock-in. After the trial proved ROI, upgrading was a no-brainer."</p>
+        <div class="test-author">Marcus Webb</div>
+        <div class="test-role">CTO, NovaTech Solutions</div>
+        <div class="test-metric"><svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg>3x faster query performance</div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars"><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg><svg viewBox="0 0 32 32"><path d="M16 2l4.2 8.6 9.4 1.4-6.8 6.6 1.6 9.4L16 23.4 7.6 28l1.6-9.4L2.4 12l9.4-1.4z"/></svg></div>
+        <p class="test-quote">"Having 8 team members collaborate on shared data during the trial sold us. Annual billing saved us $4K in year one."</p>
+        <div class="test-author">Priya Kapoor</div>
+        <div class="test-role">Head of Analytics, Quantum Retail</div>
+        <div class="test-metric"><svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg>142 hours/month saved per team</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <div class="g">
+    <h2 class="section-title" style="text-align:center;margin-bottom:var(--cds-spacing-07)">Common questions about upgrading</h2>
+    <div class="faq">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="true">What happens to my data when the trial ends?<svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg></button>
+        <div class="faq-a">Your data is retained for 30 days after trial expiration. If you subscribe within that window, all your data, engine configurations, and team settings are restored instantly with zero downtime. After 30 days, data is permanently archived.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Will I lose my engine configurations?<svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg></button>
+        <div class="faq-a">No. When you upgrade to Standard or Enterprise, your 3 Presto engine configurations, query history, optimization settings, and catalog metadata transfer automatically. There's no re-setup required.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Can I switch plans later?<svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg></button>
+        <div class="faq-a">Yes. You can upgrade from Standard to Enterprise at any time. Monthly subscribers can change plans immediately. Annual subscribers can upgrade mid-term with prorated billing. Downgrading is available at the end of your billing cycle.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">What's the cancellation policy?<svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg></button>
+        <div class="faq-a">Monthly plans can be cancelled anytime with no penalty — your service continues through the end of the billing period. Annual plans include a 30-day satisfaction guarantee and pro-rated refunds.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">Does the 20% offer apply to annual billing?<svg viewBox="0 0 32 32"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg></button>
+        <div class="faq-a">Yes — and the discounts stack. Annual subscribers get 15% off standard pricing, plus the 20% trial conversion incentive on the first 3 months. That's up to 32% savings on your first quarter.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+
+<!-- STICKY FOOTER CTA -->
+<div class="sticky-cta" aria-label="Subscribe call to action">
+  <div class="g">
+    <div class="sc-inner">
+      <div class="sc-left">
+        <span class="sc-badge">3 days left</span>
+        <div class="sc-text"><strong>watsonx.data trial</strong> · Subscribe now to keep your 2.4 TB of data and save 20%</div>
+      </div>
+      <div class="sc-right">
+        <a href="#" class="btn btn-g" style="min-height:36px;padding:6px 16px">Compare plans</a>
+        <a href="wednesday-checkout.html" class="btn btn-p" style="min-height:36px;padding:6px 48px 6px 16px">Subscribe — 20% off <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Animate value bars and chart on scroll
+const obs = new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('[data-w]').forEach(function(el){el.style.width=el.dataset.w});e.target.querySelectorAll('[data-h]').forEach(function(el){el.style.height=el.dataset.h});obs.unobserve(e.target)}})},{threshold:0.2});
+document.querySelectorAll('.val-grid,.timeline,.proof-plans,.proof-stat').forEach(function(el){obs.observe(el)});
+
+// FAQ toggle
+function toggleFaq(btn){var item=btn.closest('.faq-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(fi){fi.classList.remove('open');fi.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}}
+
+// Countdown timer (seconds only for demo)
+var sec=47;setInterval(function(){sec--;if(sec<0)sec=59;document.getElementById('sec').textContent=sec<10?'0'+sec:sec},1000);
+</script>
+</body>
+</html>

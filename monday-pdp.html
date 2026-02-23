@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>watsonx.data — Product Detail Page | IBM Commerce Storefront</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cds-background: #ffffff;
+  --cds-background-hover: #e8e8e8;
+  --cds-background-active: #c6c6c6;
+  --cds-background-inverse: #393939;
+  --cds-layer-01: #f4f4f4;
+  --cds-layer-02: #ffffff;
+  --cds-layer-03: #f4f4f4;
+  --cds-layer-hover-01: #e8e8e8;
+  --cds-field-01: #f4f4f4;
+  --cds-field-02: #ffffff;
+  --cds-border-subtle-00: #e0e0e0;
+  --cds-border-subtle-01: #c6c6c6;
+  --cds-border-strong-01: #8d8d8d;
+  --cds-border-interactive: #0f62fe;
+  --cds-text-primary: #161616;
+  --cds-text-secondary: #525252;
+  --cds-text-placeholder: #a8a8a8;
+  --cds-text-on-color: #ffffff;
+  --cds-text-helper: #6f6f6f;
+  --cds-text-inverse: #ffffff;
+  --cds-link-primary: #0f62fe;
+  --cds-link-primary-hover: #0043ce;
+  --cds-link-visited: #8a3ffc;
+  --cds-icon-primary: #161616;
+  --cds-icon-secondary: #525252;
+  --cds-support-error: #da1e28;
+  --cds-support-success: #198038;
+  --cds-support-warning: #f1c21b;
+  --cds-support-info: #0043ce;
+  --cds-button-primary: #0f62fe;
+  --cds-button-primary-hover: #0353e9;
+  --cds-button-primary-active: #002d9c;
+  --cds-button-secondary: #393939;
+  --cds-button-secondary-hover: #474747;
+  --cds-button-tertiary: #0f62fe;
+  --cds-button-danger: #da1e28;
+  --cds-focus: #0f62fe;
+  --cds-tag-blue: #d0e2ff;
+  --cds-tag-green: #a7f0ba;
+  --cds-tag-purple: #e8daff;
+  --cds-tag-teal: #9ef0f0;
+  --cds-tag-warm-gray: #e0e0e0;
+  --cds-overlay: rgba(22, 22, 22, 0.5);
+  --cds-spacing-01: 0.125rem;
+  --cds-spacing-02: 0.25rem;
+  --cds-spacing-03: 0.5rem;
+  --cds-spacing-04: 0.75rem;
+  --cds-spacing-05: 1rem;
+  --cds-spacing-06: 1.5rem;
+  --cds-spacing-07: 2rem;
+  --cds-spacing-08: 2.5rem;
+  --cds-spacing-09: 3rem;
+  --cds-spacing-10: 4rem;
+  --cds-spacing-11: 5rem;
+  --cds-spacing-12: 6rem;
+  --cds-spacing-13: 10rem;
+  --cds-heading-07: 2.625rem;
+  --cds-heading-06: 2rem;
+  --cds-heading-05: 1.75rem;
+  --cds-heading-04: 1.5rem;
+  --cds-heading-03: 1.25rem;
+  --cds-heading-02: 1rem;
+  --cds-heading-01: 0.875rem;
+  --cds-body-02: 1rem;
+  --cds-body-01: 0.875rem;
+  --cds-label-01: 0.75rem;
+  --cds-helper-01: 0.75rem;
+  --cds-code-01: 0.75rem;
+  --cds-code-02: 0.875rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--cds-text-primary);
+  background: var(--cds-background);
+  font-size: var(--cds-body-01);
+  line-height: 1.42857;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cds-grid { max-width: 99rem; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 672px) { .cds-grid { padding: 0 2rem; } }
+@media (min-width: 1056px) { .cds-grid { padding: 0 2.5rem; } }
+
+/* ========== MASTHEAD ========== */
+.ibm-masthead {
+  background: #161616; height: 48px; display: flex; align-items: center;
+  padding: 0 1rem; position: sticky; top: 0; z-index: 9000;
+}
+.ibm-logo svg { fill: white; width: 44px; height: 16px; }
+.masthead-nav { display: flex; align-items: center; height: 100%; margin-left: var(--cds-spacing-07); }
+.masthead-nav a { color: #c6c6c6; text-decoration: none; font-size: var(--cds-body-01); padding: 0 var(--cds-spacing-05); height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.11s; }
+.masthead-nav a:hover { color: #fff; background: #353535; }
+.masthead-nav a.active { color: #fff; border-bottom-color: var(--cds-button-primary); }
+.masthead-right { margin-left: auto; display: flex; align-items: center; gap: var(--cds-spacing-05); }
+.masthead-right .icon-btn { background: none; border: none; color: #c6c6c6; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.masthead-right .icon-btn:hover { background: #353535; color: #fff; }
+.cart-badge { position: relative; }
+.cart-badge::after { content: '2'; position: absolute; top: 8px; right: 8px; background: var(--cds-button-primary); color: white; font-size: 10px; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+/* ========== BREADCRUMB ========== */
+.cds-breadcrumb { padding: var(--cds-spacing-05) 0; display: flex; align-items: center; gap: var(--cds-spacing-03); font-size: var(--cds-body-01); }
+.cds-breadcrumb a { color: var(--cds-link-primary); text-decoration: none; }
+.cds-breadcrumb a:hover { text-decoration: underline; color: var(--cds-link-primary-hover); }
+.cds-breadcrumb .separator { color: var(--cds-text-secondary); }
+.cds-breadcrumb .current { color: var(--cds-text-primary); }
+
+/* ========== PDP HERO — 2-COLUMN WITH STICKY PRICING RAIL ========== */
+.pdp-hero {
+  display: grid; grid-template-columns: 1fr 420px; gap: var(--cds-spacing-07);
+  padding: var(--cds-spacing-07) 0 var(--cds-spacing-09);
+  align-items: start;
+}
+@media (max-width: 1055px) { .pdp-hero { grid-template-columns: 1fr; } }
+
+/* Product Icon */
+.pdp-product-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #0f62fe 0%, #0043ce 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: var(--cds-spacing-05); }
+.pdp-product-icon svg { fill: white; width: 32px; height: 32px; }
+.pdp-eyebrow { font-size: var(--cds-label-01); color: var(--cds-text-secondary); text-transform: uppercase; letter-spacing: 0.32px; margin-bottom: var(--cds-spacing-03); font-weight: 600; }
+.pdp-title { font-size: var(--cds-heading-07); font-weight: 300; line-height: 1.199; margin-bottom: var(--cds-spacing-05); }
+.pdp-subtitle { font-size: var(--cds-heading-03); font-weight: 400; color: var(--cds-text-secondary); line-height: 1.4; margin-bottom: var(--cds-spacing-06); max-width: 540px; }
+
+/* Tags */
+.cds-tag-group { display: flex; gap: var(--cds-spacing-03); flex-wrap: wrap; margin-bottom: var(--cds-spacing-06); }
+.cds-tag { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 24px; font-size: var(--cds-label-01); font-weight: 400; line-height: 1.33333; white-space: nowrap; height: 24px; }
+.cds-tag--blue { background: var(--cds-tag-blue); color: #0043ce; }
+.cds-tag--green { background: var(--cds-tag-green); color: #0e6027; }
+.cds-tag--purple { background: var(--cds-tag-purple); color: #6929c4; }
+.cds-tag--teal { background: var(--cds-tag-teal); color: #005d5d; }
+.cds-tag--warm-gray { background: var(--cds-tag-warm-gray); color: #525252; }
+
+/* ========== PRICING SCHEMA DECLARATION ========== */
+.pricing-schema {
+  background: var(--cds-layer-01); padding: var(--cds-spacing-05) var(--cds-spacing-06);
+  margin-bottom: var(--cds-spacing-06); border-left: 3px solid var(--cds-button-primary);
+}
+.pricing-schema-label { font-size: var(--cds-label-01); font-weight: 600; text-transform: uppercase; letter-spacing: 0.32px; color: var(--cds-text-secondary); margin-bottom: var(--cds-spacing-03); }
+.pricing-schema-type { font-size: var(--cds-heading-02); font-weight: 600; margin-bottom: var(--cds-spacing-03); }
+.pricing-schema-features { list-style: none; }
+.pricing-schema-features li { font-size: var(--cds-body-01); color: var(--cds-text-secondary); padding: var(--cds-spacing-01) 0; display: flex; align-items: center; gap: var(--cds-spacing-03); }
+.pricing-schema-features li svg { fill: var(--cds-support-success); width: 14px; height: 14px; flex-shrink: 0; }
+
+/* Buttons */
+.cds-btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--cds-spacing-03); padding: calc(0.875rem - 3px) 60px calc(0.875rem - 3px) 16px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); font-weight: 400; line-height: 1.28572; letter-spacing: 0.16px; cursor: pointer; border: none; position: relative; min-height: 48px; transition: background 70ms, border-color 70ms, color 70ms; text-decoration: none; }
+.cds-btn svg { position: absolute; right: 16px; width: 16px; height: 16px; fill: currentColor; }
+.cds-btn--primary { background: var(--cds-button-primary); color: var(--cds-text-on-color); }
+.cds-btn--primary:hover { background: var(--cds-button-primary-hover); }
+.cds-btn--primary:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.cds-btn--secondary { background: var(--cds-button-secondary); color: var(--cds-text-on-color); }
+.cds-btn--secondary:hover { background: var(--cds-button-secondary-hover); }
+.cds-btn--tertiary { background: transparent; color: var(--cds-button-tertiary); border: 1px solid var(--cds-button-tertiary); }
+.cds-btn--tertiary:hover { background: var(--cds-button-primary); color: var(--cds-text-on-color); }
+.cds-btn--ghost { background: transparent; color: var(--cds-link-primary); padding: calc(0.875rem - 3px) 16px; }
+.cds-btn--ghost:hover { background: var(--cds-background-hover); }
+.cds-btn--expressive { font-size: 1rem; min-height: 48px; }
+.cds-btn--full { width: 100%; padding-right: 16px; }
+
+/* ========== FIXED PRICING & CONFIG RAIL ========== */
+.pdp-pricing-rail {
+  background: var(--cds-layer-01); position: sticky; top: 64px;
+}
+@media (max-width: 1055px) { .pdp-pricing-rail { position: static; } }
+
+.pricing-rail-header { padding: var(--cds-spacing-05) var(--cds-spacing-06); background: var(--cds-text-primary); color: var(--cds-text-on-color); }
+.pricing-rail-plan { font-size: var(--cds-heading-02); font-weight: 600; }
+.pricing-rail-model-label { font-size: var(--cds-label-01); color: #c6c6c6; letter-spacing: 0.32px; }
+
+.pricing-rail-body { padding: var(--cds-spacing-06); }
+
+/* Commitment Toggle */
+.commitment-toggle { display: flex; border: 1px solid var(--cds-border-subtle-01); margin-bottom: var(--cds-spacing-06); }
+.commitment-toggle button { flex: 1; padding: var(--cds-spacing-03) var(--cds-spacing-05); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); background: transparent; border: none; cursor: pointer; color: var(--cds-text-secondary); transition: all 0.11s; position: relative; }
+.commitment-toggle button:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.commitment-toggle button.active { background: var(--cds-text-primary); color: var(--cds-text-on-color); font-weight: 600; }
+.commitment-savings { position: absolute; top: -8px; right: 8px; background: var(--cds-support-success); color: white; font-size: 10px; padding: 1px 6px; border-radius: 10px; font-weight: 600; }
+
+.pricing-amount-rail { margin-bottom: var(--cds-spacing-02); }
+.pricing-amount-rail .from { font-size: var(--cds-label-01); color: var(--cds-text-helper); display: block; margin-bottom: 2px; }
+.pricing-amount-rail .price { font-size: var(--cds-heading-05); font-weight: 300; }
+.pricing-amount-rail .price .currency { font-size: var(--cds-heading-03); vertical-align: super; }
+.pricing-amount-rail .price .period { font-size: var(--cds-body-01); color: var(--cds-text-secondary); font-weight: 400; }
+.pricing-billed-note { font-size: var(--cds-helper-01); color: var(--cds-text-helper); margin-bottom: var(--cds-spacing-05); }
+.pricing-savings-note { font-size: var(--cds-helper-01); color: var(--cds-support-success); font-weight: 600; margin-bottom: var(--cds-spacing-05); display: none; }
+.pricing-savings-note.visible { display: block; }
+
+/* Hyperscaler Badges */
+.hyperscaler-badges { display: flex; gap: var(--cds-spacing-03); flex-wrap: wrap; margin-bottom: var(--cds-spacing-06); }
+.hyperscaler-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 4px; font-size: var(--cds-label-01); font-weight: 500; background: var(--cds-layer-01); border: 1px solid var(--cds-border-subtle-00); }
+.hyperscaler-badge .dot { width: 8px; height: 8px; border-radius: 2px; }
+.hyperscaler-badge .dot--ibm { background: #161616; }
+.hyperscaler-badge .dot--aws { background: #FF9900; }
+.hyperscaler-badge .dot--azure { background: #0078D4; }
+
+/* CTA Zone */
+.pricing-rail-ctas { display: flex; flex-direction: column; gap: 1px; margin-bottom: var(--cds-spacing-06); }
+.pricing-rail-ctas .cds-btn { width: 100%; padding-right: 16px; justify-content: center; }
+
+/* Enterprise Trust Strip */
+.trust-strip { padding: var(--cds-spacing-05) 0; border-top: 1px solid var(--cds-border-subtle-00); }
+.trust-strip-title { font-size: var(--cds-label-01); font-weight: 600; text-transform: uppercase; letter-spacing: 0.32px; color: var(--cds-text-helper); margin-bottom: var(--cds-spacing-03); }
+.trust-items { display: grid; grid-template-columns: 1fr 1fr; gap: var(--cds-spacing-03); }
+.trust-item { display: flex; align-items: center; gap: var(--cds-spacing-02); font-size: var(--cds-label-01); color: var(--cds-text-secondary); }
+.trust-item svg { width: 14px; height: 14px; fill: var(--cds-support-success); flex-shrink: 0; }
+
+/* ========== PRICE ESTIMATOR STUB ========== */
+.price-estimator {
+  background: #edf5ff; border: 1px solid var(--cds-border-interactive); border-left: 3px solid var(--cds-border-interactive);
+  padding: var(--cds-spacing-05) var(--cds-spacing-06); margin-bottom: var(--cds-spacing-06);
+}
+.price-estimator-label { font-size: var(--cds-label-01); font-weight: 600; color: var(--cds-support-info); text-transform: uppercase; letter-spacing: 0.32px; margin-bottom: var(--cds-spacing-03); }
+.price-estimator-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--cds-spacing-05); }
+.price-estimator-item .est-label { font-size: var(--cds-label-01); color: var(--cds-text-helper); }
+.price-estimator-item .est-value { font-size: var(--cds-heading-03); font-weight: 600; font-family: 'IBM Plex Mono', monospace; }
+.price-estimator-item .est-value.savings { color: var(--cds-support-success); }
+@media (max-width: 672px) { .price-estimator-grid { grid-template-columns: 1fr; } }
+
+/* ========== TABS ========== */
+.cds-tabs { border-bottom: 1px solid var(--cds-border-subtle-00); display: flex; gap: 0; margin-top: var(--cds-spacing-09); overflow-x: auto; }
+.cds-tab { padding: var(--cds-spacing-04) var(--cds-spacing-05); font-size: var(--cds-body-01); color: var(--cds-text-secondary); background: none; border: none; cursor: pointer; border-bottom: 2px solid transparent; font-family: 'IBM Plex Sans', sans-serif; font-weight: 400; transition: all 0.11s; white-space: nowrap; }
+.cds-tab:hover { color: var(--cds-text-primary); background: var(--cds-layer-hover-01); }
+.cds-tab:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.cds-tab.active { color: var(--cds-text-primary); border-bottom-color: var(--cds-border-interactive); font-weight: 600; }
+.cds-tab-panel { display: none; padding: var(--cds-spacing-07) 0; }
+.cds-tab-panel.active { display: block; }
+
+/* ========== PRICING TIERS ========== */
+.pricing-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cds-border-subtle-00); margin-top: var(--cds-spacing-06); }
+@media (max-width: 672px) { .pricing-tiers { grid-template-columns: 1fr; } }
+.pricing-tier { background: var(--cds-background); padding: var(--cds-spacing-07); position: relative; display: flex; flex-direction: column; }
+.pricing-tier.recommended { background: var(--cds-layer-01); }
+.pricing-tier.recommended::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cds-button-primary); }
+.tier-badge { position: absolute; top: var(--cds-spacing-05); right: var(--cds-spacing-05); background: var(--cds-button-primary); color: white; font-size: var(--cds-label-01); padding: 2px 8px; letter-spacing: 0.32px; }
+.tier-name { font-size: var(--cds-heading-03); font-weight: 600; margin-bottom: var(--cds-spacing-03); }
+.tier-desc { font-size: var(--cds-body-01); color: var(--cds-text-secondary); margin-bottom: var(--cds-spacing-06); flex-grow: 1; }
+.tier-price { font-size: var(--cds-heading-05); font-weight: 300; margin-bottom: var(--cds-spacing-02); }
+.tier-price .per { font-size: var(--cds-body-01); color: var(--cds-text-secondary); }
+.tier-price-note { font-size: var(--cds-helper-01); color: var(--cds-text-helper); margin-bottom: var(--cds-spacing-06); }
+.tier-features { list-style: none; margin-bottom: var(--cds-spacing-07); }
+.tier-features li { font-size: var(--cds-body-01); padding: var(--cds-spacing-03) 0; border-bottom: 1px solid var(--cds-border-subtle-00); display: flex; align-items: center; gap: var(--cds-spacing-03); }
+.tier-features li svg { fill: var(--cds-support-success); width: 16px; height: 16px; flex-shrink: 0; }
+.tier-cta { margin-top: auto; }
+.tier-cta .cds-btn { width: 100%; justify-content: center; padding-right: 16px; }
+
+/* ========== FEATURES GRID ========== */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--cds-border-subtle-00); }
+@media (max-width: 672px) { .features-grid { grid-template-columns: 1fr; } }
+.feature-tile { background: var(--cds-background); padding: var(--cds-spacing-07); }
+.feature-tile-icon { width: 32px; height: 32px; margin-bottom: var(--cds-spacing-05); }
+.feature-tile-icon svg { fill: var(--cds-icon-primary); width: 32px; height: 32px; }
+.feature-tile h3 { font-size: var(--cds-heading-02); font-weight: 600; margin-bottom: var(--cds-spacing-03); }
+.feature-tile p { font-size: var(--cds-body-01); color: var(--cds-text-secondary); line-height: 1.5; }
+
+/* ========== DATA TABLE ========== */
+.cds-data-table { width: 100%; border-collapse: collapse; font-size: var(--cds-body-01); }
+.cds-data-table thead { background: var(--cds-layer-01); }
+.cds-data-table th { text-align: left; padding: var(--cds-spacing-04) var(--cds-spacing-05); font-weight: 600; font-size: var(--cds-heading-01); color: var(--cds-text-primary); border-bottom: 1px solid var(--cds-border-subtle-01); }
+.cds-data-table td { padding: var(--cds-spacing-04) var(--cds-spacing-05); border-bottom: 1px solid var(--cds-border-subtle-00); vertical-align: middle; }
+.cds-data-table tbody tr:hover { background: var(--cds-layer-hover-01); }
+.check-icon { fill: var(--cds-support-success); width: 16px; height: 16px; }
+.dash-icon { color: var(--cds-text-placeholder); }
+
+/* ========== NOTIFICATION ========== */
+.cds-notification { display: flex; gap: var(--cds-spacing-04); padding: var(--cds-spacing-05); margin: var(--cds-spacing-07) 0; }
+.cds-notification--info { background: #edf5ff; border-left: 3px solid var(--cds-support-info); }
+.cds-notification svg { fill: var(--cds-support-info); width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+.cds-notification-content h4 { font-size: var(--cds-body-01); font-weight: 600; margin-bottom: var(--cds-spacing-02); }
+.cds-notification-content p { font-size: var(--cds-body-01); color: var(--cds-text-secondary); }
+
+/* ========== DEPLOYMENT ========== */
+.deployment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--cds-spacing-05); margin-top: var(--cds-spacing-05); }
+@media (max-width: 672px) { .deployment-grid { grid-template-columns: repeat(2, 1fr); } }
+.deployment-tile { background: var(--cds-layer-01); padding: var(--cds-spacing-05); display: flex; align-items: center; gap: var(--cds-spacing-04); cursor: pointer; border: 2px solid transparent; transition: all 0.11s; }
+.deployment-tile:hover { background: var(--cds-layer-hover-01); }
+.deployment-tile:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.deployment-tile.selected { border-color: var(--cds-border-interactive); background: #edf5ff; }
+.deployment-tile .cloud-icon { width: 32px; height: 32px; background: var(--cds-background-inverse); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+.deployment-tile .cloud-icon svg { fill: white; width: 20px; height: 20px; }
+.deployment-tile span { font-size: var(--cds-body-01); font-weight: 500; }
+
+/* ========== SECTIONS ========== */
+.section-heading { font-size: var(--cds-heading-04); font-weight: 300; margin-bottom: var(--cds-spacing-03); }
+.section-description { font-size: var(--cds-body-02); color: var(--cds-text-secondary); margin-bottom: var(--cds-spacing-07); max-width: 640px; }
+
+/* ========== FOOTER ========== */
+.pdp-footer { background: var(--cds-text-primary); color: #c6c6c6; padding: var(--cds-spacing-09) 0; margin-top: var(--cds-spacing-12); }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--cds-spacing-07); }
+@media (max-width: 672px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+.footer-col h4 { color: white; font-size: var(--cds-body-01); font-weight: 600; margin-bottom: var(--cds-spacing-05); }
+.footer-col a { display: block; color: #c6c6c6; text-decoration: none; font-size: var(--cds-body-01); padding: var(--cds-spacing-02) 0; }
+.footer-col a:hover { text-decoration: underline; }
+.footer-bottom { border-top: 1px solid #393939; padding-top: var(--cds-spacing-06); margin-top: var(--cds-spacing-07); display: flex; justify-content: space-between; font-size: var(--cds-label-01); color: #6f6f6f; flex-wrap: wrap; gap: var(--cds-spacing-03); }
+
+/* ========== FOCUS STATES (Accessibility) ========== */
+*:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+</style>
+</head>
+<body>
+
+<!-- IBM Masthead -->
+<header class="ibm-masthead" role="banner">
+  <div class="ibm-logo"><svg viewBox="0 0 44 16" xmlns="http://www.w3.org/2000/svg" aria-label="IBM"><path d="M0 0h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 2.6h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM2.1 5.2h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM2.1 7.8h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM0 10.4h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 13h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM26 0h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 2.6h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM28.1 5.2h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM28.1 7.8h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM26 10.4h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 13h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35z"/></svg></div>
+  <nav class="masthead-nav" aria-label="Main navigation">
+    <a href="#">Products</a><a href="#" class="active">Catalog</a><a href="#">Solutions</a><a href="#">Consulting</a><a href="#">Support</a>
+  </nav>
+  <div class="masthead-right">
+    <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M29 27.586l-7.552-7.552a11.018 11.018 0 10-1.414 1.414L27.586 29zM4 13a9 9 0 119 9 9.01 9.01 0 01-9-9z"/></svg></button>
+    <button class="icon-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7 7 7 0 00-7-7zM26 30h-2v-5a5 5 0 00-5-5h-6a5 5 0 00-5 5v5H6v-5a7 7 0 017-7h6a7 7 0 017 7z"/></svg></button>
+    <button class="icon-btn cart-badge" aria-label="Cart — 2 items"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M29.734 8.012a1 1 0 00-.777-.373H7.22l-.504-2.515A2.004 2.004 0 004.757 3.5H2v2h2.757l3.564 17.812A2.004 2.004 0 0010.28 25h13.413a2.003 2.003 0 001.959-1.594L28.963 10H22V8h6.957a1 1 0 00.777-.988zM23.693 23H10.28L7.62 9.639h20.137z"/><circle cx="12" cy="28" r="2"/><circle cx="22" cy="28" r="2"/></svg></button>
+  </div>
+</header>
+
+<main class="cds-grid">
+
+  <!-- Breadcrumb -->
+  <nav class="cds-breadcrumb" aria-label="Breadcrumb">
+    <a href="#">IBM</a><span class="separator">/</span><a href="#">Products</a><span class="separator">/</span><a href="#">Data &amp; AI</a><span class="separator">/</span><span class="current" aria-current="page">watsonx.data</span>
+  </nav>
+
+  <!-- PDP Hero — Left Content + Right Pricing Rail -->
+  <section class="pdp-hero" aria-label="Product overview">
+
+    <!-- LEFT: Value Proposition -->
+    <div class="pdp-hero-left">
+      <div class="pdp-product-icon"><svg viewBox="0 0 32 32" fill="white"><path d="M27 5H5a3 3 0 00-3 3v16a3 3 0 003 3h22a3 3 0 003-3V8a3 3 0 00-3-3zm-12 2h2v2h-2zm-4 0h2v2h-2zm-4 0h2v2h-2zm20 17a1 1 0 01-1 1H5a1 1 0 01-1-1V11h24zm0-14H4V8a1 1 0 011-1h2v2h4V7h2v2h4V7h10a1 1 0 011 1z"/></svg></div>
+      <div class="pdp-eyebrow">IBM watsonx</div>
+      <h1 class="pdp-title">watsonx.data</h1>
+      <p class="pdp-subtitle">Scale AI workloads for all your data, anywhere, with an open, hybrid, and governed data store optimized for all data and AI workloads.</p>
+
+      <div class="cds-tag-group">
+        <span class="cds-tag cds-tag--green">SaaS</span>
+        <span class="cds-tag cds-tag--purple">AI &amp; Data</span>
+        <span class="cds-tag cds-tag--teal">Cloud Platform</span>
+        <span class="cds-tag cds-tag--warm-gray"><svg width="12" height="12" viewBox="0 0 32 32" fill="currentColor"><path d="M28 12H20V4h8zM22 10h4V6H22z"/><path d="M17 15V9H9v14h14V15zm-6-4h4v4h-4zm4 10h-4V17h4zm6 0h-4V17h4z"/><path d="M12 28H4V20h8zm-6-2h4V22H6z"/></svg> AWS, Azure</span>
+      </div>
+
+      <!-- Pricing Schema Declaration -->
+      <div class="pricing-schema" role="region" aria-label="Pricing model">
+        <div class="pricing-schema-label">Pricing model</div>
+        <div class="pricing-schema-type">Subscription (SaaS) — Usage-based</div>
+        <ul class="pricing-schema-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Monthly or Annual commitment</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Pay-as-you-go option available</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Hyperscaler deployment supported (AWS, Azure)</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Free trial — no credit card required</li>
+        </ul>
+      </div>
+
+      <!-- Real-Time Price Estimator Stub -->
+      <div class="price-estimator" role="region" aria-label="Price estimate" aria-live="polite">
+        <div class="price-estimator-label">Estimated cost based on selected configuration</div>
+        <div class="price-estimator-grid">
+          <div class="price-estimator-item">
+            <div class="est-label">Estimated monthly</div>
+            <div class="est-value" id="est-monthly">$1,196.16</div>
+          </div>
+          <div class="price-estimator-item">
+            <div class="est-label">Estimated annual</div>
+            <div class="est-value" id="est-annual">$12,200.83</div>
+          </div>
+          <div class="price-estimator-item">
+            <div class="est-label">Annual savings</div>
+            <div class="est-value savings" id="est-savings">Save 15%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Fixed Pricing & Configuration Rail -->
+    <aside class="pdp-pricing-rail" aria-label="Pricing and configuration">
+      <div class="pricing-rail-header">
+        <div class="pricing-rail-plan">Standard plan</div>
+        <div class="pricing-rail-model-label">Subscription · Usage-based</div>
+      </div>
+
+      <div class="pricing-rail-body">
+        <!-- Commitment Toggle -->
+        <div class="commitment-toggle" role="group" aria-label="Billing frequency">
+          <button class="active" onclick="setCommitment('monthly', this)" aria-pressed="true">Monthly</button>
+          <button onclick="setCommitment('annual', this)" aria-pressed="false">Annual <span class="commitment-savings">Save 15%</span></button>
+        </div>
+
+        <!-- Pricing Display -->
+        <div class="pricing-amount-rail" aria-live="polite">
+          <span class="from">From</span>
+          <div class="price"><span class="currency">$</span><span id="rail-price">1.04</span> <span class="period">USD / RU-Hour</span></div>
+        </div>
+        <div class="pricing-billed-note" id="billed-note">Billed monthly · Cancel anytime</div>
+        <div class="pricing-savings-note" id="savings-note" role="status">Save 15% with annual commitment — Billed annually</div>
+
+        <!-- Hyperscaler Badges -->
+        <div class="hyperscaler-badges" aria-label="Available deployment targets">
+          <span class="hyperscaler-badge"><span class="dot dot--ibm"></span>IBM Cloud</span>
+          <span class="hyperscaler-badge"><span class="dot dot--aws"></span>AWS</span>
+          <span class="hyperscaler-badge"><span class="dot dot--azure"></span>Azure</span>
+        </div>
+
+        <!-- Unified CTA: Configure Plan (replaces separate Trial + Buy) -->
+        <div class="pricing-rail-ctas">
+          <a class="cds-btn cds-btn--primary cds-btn--expressive" href="wednesday-checkout.html" aria-label="Configure plan for watsonx.data">
+            Configure plan
+            <svg viewBox="0 0 32 32"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg>
+          </a>
+          <a class="cds-btn cds-btn--ghost" href="#" aria-label="Contact IBM sales">
+            Contact sales
+          </a>
+        </div>
+
+        <!-- Enterprise Trust Strip -->
+        <div class="trust-strip" role="complementary" aria-label="Enterprise trust signals">
+          <div class="trust-strip-title">Enterprise ready</div>
+          <div class="trust-items">
+            <div class="trust-item"><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> 99.9% SLA</div>
+            <div class="trust-item"><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> SOC 2 compliant</div>
+            <div class="trust-item"><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> GDPR ready</div>
+            <div class="trust-item"><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Enterprise support</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Tabs -->
+  <div class="cds-tabs" role="tablist" aria-label="Product information tabs">
+    <button class="cds-tab active" onclick="showTab('overview', this)" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview">Overview</button>
+    <button class="cds-tab" onclick="showTab('pricing', this)" role="tab" aria-selected="false" aria-controls="panel-pricing" id="tab-pricing">Pricing &amp; plans</button>
+    <button class="cds-tab" onclick="showTab('features', this)" role="tab" aria-selected="false" aria-controls="panel-features" id="tab-features">Features</button>
+    <button class="cds-tab" onclick="showTab('deployment', this)" role="tab" aria-selected="false" aria-controls="panel-deployment" id="tab-deployment">Deployment</button>
+    <button class="cds-tab" onclick="showTab('docs', this)" role="tab" aria-selected="false" aria-controls="panel-docs" id="tab-docs">Documentation</button>
+    <button class="cds-tab" onclick="showTab('support', this)" role="tab" aria-selected="false" aria-controls="panel-support" id="tab-support">Support</button>
+  </div>
+
+  <!-- Tab: Overview -->
+  <div id="panel-overview" class="cds-tab-panel active" role="tabpanel" aria-labelledby="tab-overview">
+    <h2 class="section-heading">Why watsonx.data</h2>
+    <p class="section-description">Purpose-built for AI workloads, watsonx.data enables you to scale analytics and AI with a data store built on an open data lakehouse architecture.</p>
+    <div class="features-grid">
+      <div class="feature-tile">
+        <div class="feature-tile-icon"><svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 010-24v12l8.481 8.481A11.963 11.963 0 0116 28z"/></svg></div>
+        <h3>Cost optimization</h3>
+        <p>Reduce your data warehouse costs by up to 50% through workload optimization across multiple query engines.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-tile-icon"><svg viewBox="0 0 32 32"><path d="M4 24h10v2H4zm0-6h10v2H4zm22-4H6a2 2 0 01-2-2V6a2 2 0 012-2h20a2 2 0 012 2v6a2 2 0 01-2 2zm-20-2h20V6H6zm20 16H18v-2h8v-4h2v4a2 2 0 01-2 2z"/></svg></div>
+        <h3>Open format</h3>
+        <p>Built on open formats including Apache Iceberg, Apache Parquet, and Apache Orc for data portability.</p>
+      </div>
+      <div class="feature-tile">
+        <div class="feature-tile-icon"><svg viewBox="0 0 32 32"><path d="M16 22a6 6 0 116-6 6.007 6.007 0 01-6 6zm0-10a4 4 0 104 4 4.005 4.005 0 00-4-4z"/><path d="M28 16a12 12 0 10-12 12 12 12 0 0012-12zm-22 0A10 10 0 0125.89 14H28a12 12 0 01.01 4h-2.12A10 10 0 016 16z"/></svg></div>
+        <h3>Governed access</h3>
+        <p>Centralized governance with fine-grained access control, data lineage, and audit trails built in.</p>
+      </div>
+    </div>
+    <div class="cds-notification cds-notification--info" style="margin-top:var(--cds-spacing-09)" role="status">
+      <svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/><path d="M15 8h2v2h-2zm0 4h2v12h-2z"/></svg>
+      <div class="cds-notification-content">
+        <h4>Hyperscaler availability</h4>
+        <p>watsonx.data is available on AWS and Microsoft Azure in addition to IBM Cloud. Select your deployment target during configuration.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Pricing -->
+  <div id="panel-pricing" class="cds-tab-panel" role="tabpanel" aria-labelledby="tab-pricing">
+    <h2 class="section-heading">Plans &amp; pricing</h2>
+    <p class="section-description">Choose the plan that fits your workload. All plans include the watsonx.data lakehouse engine with open format support.</p>
+    <div class="pricing-tiers">
+      <div class="pricing-tier">
+        <div class="tier-name">Lite</div>
+        <div class="tier-desc">For individual exploration and evaluation. Perfect for getting started.</div>
+        <div class="tier-price">Free<div class="tier-price-note">Limited resources · 30 days</div></div>
+        <ul class="tier-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> 1 engine, 2 nodes max</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> 1 TB storage</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Community support</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> IBM Cloud only</li>
+        </ul>
+        <div class="tier-cta"><a class="cds-btn cds-btn--tertiary" href="#">Start free trial</a></div>
+      </div>
+      <div class="pricing-tier recommended">
+        <div class="tier-badge">Recommended</div>
+        <div class="tier-name">Standard</div>
+        <div class="tier-desc">For teams running production workloads with scalable resources and support.</div>
+        <div class="tier-price">From $1.04 <span class="per">/ RU-Hour</span></div>
+        <div class="tier-price-note">Pay-as-you-go · Save 15% with annual</div>
+        <ul class="tier-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Unlimited engines &amp; nodes</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Unlimited storage</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Standard support included</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> AWS, Azure, IBM Cloud</li>
+        </ul>
+        <div class="tier-cta"><a class="cds-btn cds-btn--primary" href="wednesday-checkout.html">Configure plan</a></div>
+      </div>
+      <div class="pricing-tier">
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-desc">For organizations requiring dedicated resources, SLAs, and custom terms.</div>
+        <div class="tier-price">Custom</div>
+        <div class="tier-price-note">Volume-based · Committed spend</div>
+        <ul class="tier-features">
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Everything in Standard</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Dedicated infrastructure</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Premium support + TAM</li>
+          <li><svg viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg> Custom SLA &amp; compliance</li>
+        </ul>
+        <div class="tier-cta"><a class="cds-btn cds-btn--secondary" href="#">Contact sales</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Features -->
+  <div id="panel-features" class="cds-tab-panel" role="tabpanel" aria-labelledby="tab-features">
+    <h2 class="section-heading">Feature comparison</h2>
+    <p class="section-description">Compare capabilities across plans to find the right fit for your workload.</p>
+    <table class="cds-data-table" aria-label="Feature comparison across plans">
+      <thead><tr><th style="width:40%">Feature</th><th>Lite</th><th>Standard</th><th>Enterprise</th></tr></thead>
+      <tbody>
+        <tr><td>Query engines (Presto, Spark)</td><td>1</td><td>Unlimited</td><td>Unlimited + dedicated</td></tr>
+        <tr><td>Storage capacity</td><td>1 TB</td><td>Pay-per-use</td><td>Committed</td></tr>
+        <tr><td>Apache Iceberg support</td><td><svg class="check-icon" viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></td><td><svg class="check-icon" viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></td><td><svg class="check-icon" viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></td></tr>
+        <tr><td>Data governance</td><td><span class="dash-icon">—</span></td><td>Add-on</td><td><svg class="check-icon" viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></td></tr>
+        <tr><td>Multi-cloud deployment</td><td><span class="dash-icon">—</span></td><td><svg class="check-icon" viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></td><td><svg class="check-icon" viewBox="0 0 32 32"><path d="M14 21.414l-5-5.001L10.413 15 14 18.586 21.585 11 23 12.415l-9 8.999z"/></svg></td></tr>
+        <tr><td>SLA guarantee</td><td><span class="dash-icon">—</span></td><td>99.9%</td><td>99.99% + custom</td></tr>
+        <tr><td>Support level</td><td>Community</td><td>Standard</td><td>Premium + TAM</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Tab: Deployment -->
+  <div id="panel-deployment" class="cds-tab-panel" role="tabpanel" aria-labelledby="tab-deployment">
+    <h2 class="section-heading">Deployment options</h2>
+    <p class="section-description">Deploy watsonx.data on the cloud provider that best fits your existing infrastructure and compliance requirements.</p>
+    <div class="deployment-grid">
+      <div class="deployment-tile selected" onclick="selectDeployment(this)" tabindex="0" role="radio" aria-checked="true"><div class="cloud-icon"><svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/></svg></div><span>IBM Cloud</span></div>
+      <div class="deployment-tile" onclick="selectDeployment(this)" tabindex="0" role="radio" aria-checked="false"><div class="cloud-icon" style="background:#FF9900"><svg viewBox="0 0 32 32" fill="white"><path d="M16 2l14 14-14 14L2 16z"/></svg></div><span>AWS</span></div>
+      <div class="deployment-tile" onclick="selectDeployment(this)" tabindex="0" role="radio" aria-checked="false"><div class="cloud-icon" style="background:#0078D4"><svg viewBox="0 0 32 32" fill="white"><path d="M4 4h12v12H4zM18 4h12v12H18zM4 18h12v12H4zM18 18h12v12H18z"/></svg></div><span>Microsoft Azure</span></div>
+      <div class="deployment-tile" onclick="selectDeployment(this)" tabindex="0" role="radio" aria-checked="false"><div class="cloud-icon" style="background:#525252"><svg viewBox="0 0 32 32" fill="white"><path d="M6 6h8v8H6zM18 6h8v8h-8zM6 18h8v8H6zM18 18h8v8h-8z"/></svg></div><span>On-premise</span></div>
+    </div>
+    <div class="cds-notification cds-notification--info" style="margin-top:var(--cds-spacing-07)" role="status">
+      <svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/><path d="M15 8h2v2h-2zm0 4h2v12h-2z"/></svg>
+      <div class="cds-notification-content"><h4>Seller cart integration</h4><p>watsonx.data seller cart is enabled for IBM Cloud and will be available on SAP Commerce starting February 2026.</p></div>
+    </div>
+  </div>
+
+  <!-- Tab: Docs -->
+  <div id="panel-docs" class="cds-tab-panel" role="tabpanel" aria-labelledby="tab-docs">
+    <h2 class="section-heading">Documentation</h2>
+    <p class="section-description">Get started with guides, API references, and tutorials.</p>
+    <div style="padding:var(--cds-spacing-09);background:var(--cds-layer-01);text-align:center;color:var(--cds-text-secondary);"><p>Documentation content loads from IBM Docs platform</p></div>
+  </div>
+
+  <!-- Tab: Support -->
+  <div id="panel-support" class="cds-tab-panel" role="tabpanel" aria-labelledby="tab-support">
+    <h2 class="section-heading">Support</h2>
+    <p class="section-description">Choose the support plan that matches your operational requirements.</p>
+    <div style="padding:var(--cds-spacing-09);background:var(--cds-layer-01);text-align:center;color:var(--cds-text-secondary);"><p>Support plans content area</p></div>
+  </div>
+
+</main>
+
+<footer class="pdp-footer">
+  <div class="cds-grid">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Product</h4><a href="#">Overview</a><a href="#">Pricing</a><a href="#">Documentation</a><a href="#">API reference</a><a href="#">What's new</a></div>
+      <div class="footer-col"><h4>Resources</h4><a href="#">Getting started</a><a href="#">Tutorials</a><a href="#">Community</a><a href="#">IBM Developer</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="#">Support plans</a><a href="#">Contact sales</a><a href="#">Status page</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#">About IBM</a><a href="#">Careers</a><a href="#">Blog</a></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 IBM Corporation</span><span>Terms · Privacy · Cookie preferences · Accessibility</span></div>
+  </div>
+</footer>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.cds-tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.cds-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+}
+
+function selectDeployment(tile) {
+  document.querySelectorAll('.deployment-tile').forEach(t => { t.classList.remove('selected'); t.setAttribute('aria-checked','false'); });
+  tile.classList.add('selected');
+  tile.setAttribute('aria-checked','true');
+}
+
+function setCommitment(type, btn) {
+  document.querySelectorAll('.commitment-toggle button').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  btn.classList.add('active');
+  btn.setAttribute('aria-pressed','true');
+
+  var billedNote = document.getElementById('billed-note');
+  var savingsNote = document.getElementById('savings-note');
+  var railPrice = document.getElementById('rail-price');
+
+  if (type === 'annual') {
+    billedNote.textContent = 'Billed annually · 15% discount applied';
+    savingsNote.classList.add('visible');
+    railPrice.textContent = '0.88';
+    document.getElementById('est-monthly').textContent = '$1,016.74';
+    document.getElementById('est-annual').textContent = '$10,370.71';
+    document.getElementById('est-savings').textContent = 'Saving $1,830.12/yr';
+  } else {
+    billedNote.textContent = 'Billed monthly · Cancel anytime';
+    savingsNote.classList.remove('visible');
+    railPrice.textContent = '1.04';
+    document.getElementById('est-monthly').textContent = '$1,196.16';
+    document.getElementById('est-annual').textContent = '$12,200.83';
+    document.getElementById('est-savings').textContent = 'Save 15%';
+  }
+}
+</script>
+</body>
+</html>

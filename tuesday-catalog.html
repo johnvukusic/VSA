@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM Product Catalog — Commerce Marketplace | IBM</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cds-background: #ffffff;
+  --cds-background-hover: #e8e8e8;
+  --cds-layer-01: #f4f4f4;
+  --cds-layer-02: #ffffff;
+  --cds-layer-hover-01: #e8e8e8;
+  --cds-field-01: #f4f4f4;
+  --cds-border-subtle-00: #e0e0e0;
+  --cds-border-subtle-01: #c6c6c6;
+  --cds-border-strong-01: #8d8d8d;
+  --cds-border-interactive: #0f62fe;
+  --cds-text-primary: #161616;
+  --cds-text-secondary: #525252;
+  --cds-text-placeholder: #a8a8a8;
+  --cds-text-on-color: #ffffff;
+  --cds-text-helper: #6f6f6f;
+  --cds-link-primary: #0f62fe;
+  --cds-link-primary-hover: #0043ce;
+  --cds-icon-primary: #161616;
+  --cds-icon-secondary: #525252;
+  --cds-support-success: #198038;
+  --cds-support-info: #0043ce;
+  --cds-support-error: #da1e28;
+  --cds-button-primary: #0f62fe;
+  --cds-button-primary-hover: #0353e9;
+  --cds-button-secondary: #393939;
+  --cds-button-tertiary: #0f62fe;
+  --cds-focus: #0f62fe;
+  --cds-tag-blue: #d0e2ff;
+  --cds-tag-green: #a7f0ba;
+  --cds-tag-purple: #e8daff;
+  --cds-tag-teal: #9ef0f0;
+  --cds-tag-warm-gray: #e0e0e0;
+  --cds-tag-cyan: #bae6ff;
+  --cds-tag-magenta: #ffd6e8;
+  --cds-spacing-01: 0.125rem;
+  --cds-spacing-02: 0.25rem;
+  --cds-spacing-03: 0.5rem;
+  --cds-spacing-04: 0.75rem;
+  --cds-spacing-05: 1rem;
+  --cds-spacing-06: 1.5rem;
+  --cds-spacing-07: 2rem;
+  --cds-spacing-08: 2.5rem;
+  --cds-spacing-09: 3rem;
+  --cds-spacing-10: 4rem;
+  --cds-heading-07: 2.625rem;
+  --cds-heading-06: 2rem;
+  --cds-heading-05: 1.75rem;
+  --cds-heading-04: 1.5rem;
+  --cds-heading-03: 1.25rem;
+  --cds-heading-02: 1rem;
+  --cds-heading-01: 0.875rem;
+  --cds-body-02: 1rem;
+  --cds-body-01: 0.875rem;
+  --cds-label-01: 0.75rem;
+  --cds-helper-01: 0.75rem;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--cds-text-primary);
+  background: var(--cds-background);
+  font-size: var(--cds-body-01);
+  line-height: 1.42857;
+  -webkit-font-smoothing: antialiased;
+}
+
+.cds-grid { max-width: 99rem; margin: 0 auto; padding: 0 1rem; }
+@media (min-width: 672px) { .cds-grid { padding: 0 2rem; } }
+@media (min-width: 1056px) { .cds-grid { padding: 0 2.5rem; } }
+
+/* ========== MASTHEAD ========== */
+.ibm-masthead { background: #161616; height: 48px; display: flex; align-items: center; padding: 0 1rem; position: sticky; top: 0; z-index: 9000; }
+.ibm-logo svg { fill: white; width: 44px; height: 16px; }
+.masthead-nav { display: flex; align-items: center; height: 100%; margin-left: var(--cds-spacing-07); }
+.masthead-nav a { color: #c6c6c6; text-decoration: none; font-size: var(--cds-body-01); padding: 0 var(--cds-spacing-05); height: 100%; display: flex; align-items: center; border-bottom: 2px solid transparent; transition: all 0.11s; }
+.masthead-nav a:hover { color: #fff; background: #353535; }
+.masthead-nav a.active { color: #fff; border-bottom-color: var(--cds-button-primary); }
+.masthead-right { margin-left: auto; display: flex; align-items: center; gap: var(--cds-spacing-05); }
+.icon-btn { background: none; border: none; color: #c6c6c6; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.icon-btn:hover { background: #353535; color: #fff; }
+
+/* ========== CATALOG HERO ========== */
+.catalog-hero { background: #161616; color: white; padding: var(--cds-spacing-10) 0 var(--cds-spacing-09); }
+.catalog-hero h1 { font-size: var(--cds-heading-07); font-weight: 300; line-height: 1.199; margin-bottom: var(--cds-spacing-05); }
+.catalog-hero p { font-size: var(--cds-heading-03); font-weight: 300; color: #c6c6c6; max-width: 640px; margin-bottom: var(--cds-spacing-07); }
+
+/* Search */
+.catalog-search { position: relative; max-width: 600px; }
+.catalog-search input { width: 100%; height: 48px; background: #262626; border: none; border-bottom: 1px solid #6f6f6f; color: white; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-02); padding: 0 var(--cds-spacing-05) 0 48px; outline: none; transition: border-color 0.11s; }
+.catalog-search input::placeholder { color: #6f6f6f; }
+.catalog-search input:focus { border-bottom-color: var(--cds-button-primary); outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.catalog-search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); fill: #c6c6c6; width: 16px; height: 16px; }
+.search-count { font-size: var(--cds-label-01); color: #6f6f6f; margin-top: var(--cds-spacing-03); font-family: 'IBM Plex Mono', monospace; }
+
+/* ========== CATALOG LAYOUT ========== */
+.catalog-layout { display: grid; grid-template-columns: 256px 1fr; gap: 0; min-height: 100vh; }
+@media (max-width: 1055px) { .catalog-layout { grid-template-columns: 1fr; } .catalog-sidebar { display: none; } }
+
+/* Sidebar */
+.catalog-sidebar { background: var(--cds-layer-01); padding: var(--cds-spacing-06) var(--cds-spacing-05); border-right: 1px solid var(--cds-border-subtle-00); position: sticky; top: 48px; height: calc(100vh - 48px); overflow-y: auto; }
+.filter-section { margin-bottom: var(--cds-spacing-06); padding-bottom: var(--cds-spacing-06); border-bottom: 1px solid var(--cds-border-subtle-00); }
+.filter-section:last-child { border-bottom: none; }
+.filter-label { font-size: var(--cds-label-01); font-weight: 600; text-transform: uppercase; letter-spacing: 0.32px; color: var(--cds-text-secondary); margin-bottom: var(--cds-spacing-04); }
+
+/* Checkbox */
+.cds-checkbox { display: flex; align-items: center; gap: var(--cds-spacing-03); padding: var(--cds-spacing-02) 0; cursor: pointer; font-size: var(--cds-body-01); }
+.cds-checkbox input { appearance: none; width: 16px; height: 16px; border: 1px solid var(--cds-icon-primary); background: transparent; cursor: pointer; position: relative; flex-shrink: 0; }
+.cds-checkbox input:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: 1px; }
+.cds-checkbox input:checked { background: var(--cds-button-primary); border-color: var(--cds-button-primary); }
+.cds-checkbox input:checked::after { content: ''; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px; border: solid white; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+.cds-checkbox .count { margin-left: auto; font-size: var(--cds-label-01); color: var(--cds-text-helper); font-family: 'IBM Plex Mono', monospace; }
+
+/* Active Filters */
+.active-filters { display: flex; align-items: center; gap: var(--cds-spacing-03); flex-wrap: wrap; padding: var(--cds-spacing-04) 0; border-bottom: 1px solid var(--cds-border-subtle-00); margin-bottom: var(--cds-spacing-06); }
+.filter-tag { display: inline-flex; align-items: center; gap: 4px; padding: 0 4px 0 8px; background: var(--cds-tag-blue); color: #0043ce; border-radius: 24px; font-size: var(--cds-label-01); height: 24px; cursor: pointer; border: none; font-family: 'IBM Plex Sans', sans-serif; }
+.filter-tag:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: 1px; }
+.filter-tag .close { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.filter-tag .close:hover { background: rgba(0,67,206,0.2); }
+.filter-tag .close svg { width: 10px; height: 10px; fill: currentColor; }
+.clear-all { font-size: var(--cds-label-01); color: var(--cds-link-primary); background: none; border: none; cursor: pointer; font-family: 'IBM Plex Sans', sans-serif; margin-left: auto; }
+.clear-all:hover { text-decoration: underline; }
+.clear-all:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: 1px; }
+
+/* Content Area */
+.catalog-content { padding: var(--cds-spacing-06); }
+
+/* Toolbar */
+.catalog-toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--cds-spacing-06); flex-wrap: wrap; gap: var(--cds-spacing-04); }
+.results-count { font-size: var(--cds-body-01); color: var(--cds-text-secondary); }
+.results-count strong { color: var(--cds-text-primary); }
+.toolbar-right { display: flex; align-items: center; gap: var(--cds-spacing-05); flex-wrap: wrap; }
+
+/* Commitment Toggle above grid */
+.catalog-commitment-toggle { display: flex; align-items: center; gap: var(--cds-spacing-05); margin-bottom: var(--cds-spacing-06); padding: var(--cds-spacing-04) var(--cds-spacing-05); background: var(--cds-layer-01); border-left: 3px solid var(--cds-border-interactive); }
+.catalog-commitment-toggle .toggle-label { font-size: var(--cds-body-01); color: var(--cds-text-secondary); }
+.catalog-commitment-toggle .toggle-group { display: flex; border: 1px solid var(--cds-border-subtle-01); }
+.catalog-commitment-toggle .toggle-group button { padding: var(--cds-spacing-02) var(--cds-spacing-05); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); background: transparent; border: none; cursor: pointer; color: var(--cds-text-secondary); transition: all 0.11s; }
+.catalog-commitment-toggle .toggle-group button:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.catalog-commitment-toggle .toggle-group button.active { background: var(--cds-text-primary); color: var(--cds-text-on-color); font-weight: 600; }
+.catalog-commitment-toggle .savings-label { font-size: var(--cds-label-01); color: var(--cds-support-success); font-weight: 600; }
+
+/* Content Switcher */
+.cds-content-switcher { display: flex; height: 40px; }
+.cds-content-switcher button { background: transparent; border: 1px solid var(--cds-border-strong-01); color: var(--cds-text-secondary); padding: 0 var(--cds-spacing-05); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.11s; }
+.cds-content-switcher button:first-child { border-radius: 0; }
+.cds-content-switcher button:last-child { border-radius: 0; border-left: none; }
+.cds-content-switcher button:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.cds-content-switcher button.active { background: var(--cds-text-primary); color: var(--cds-text-on-color); border-color: var(--cds-text-primary); }
+.cds-content-switcher button svg { fill: currentColor; width: 16px; height: 16px; }
+
+/* Dropdown */
+.cds-dropdown { position: relative; height: 40px; }
+.cds-dropdown select { appearance: none; height: 40px; background: var(--cds-field-01); border: none; border-bottom: 1px solid var(--cds-border-strong-01); padding: 0 40px 0 var(--cds-spacing-05); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); color: var(--cds-text-primary); cursor: pointer; min-width: 180px; }
+.cds-dropdown select:focus { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.cds-dropdown svg { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); fill: var(--cds-icon-primary); width: 16px; height: 16px; pointer-events: none; }
+
+/* ========== PRODUCT CARDS ========== */
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1px; background: var(--cds-border-subtle-00); }
+
+.product-card { background: var(--cds-background); padding: var(--cds-spacing-06); cursor: pointer; transition: background 0.11s; display: flex; flex-direction: column; position: relative; min-height: 340px; }
+.product-card:hover { background: var(--cds-layer-hover-01); }
+.product-card:focus-within { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+
+.product-card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--cds-spacing-05); }
+.product-icon { width: 48px; height: 48px; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.product-icon svg { width: 24px; height: 24px; fill: white; }
+.product-icon.blue { background: linear-gradient(135deg, #0f62fe, #0043ce); }
+.product-icon.purple { background: linear-gradient(135deg, #8a3ffc, #6929c4); }
+.product-icon.teal { background: linear-gradient(135deg, #009d9a, #005d5d); }
+.product-icon.red { background: linear-gradient(135deg, #fa4d56, #da1e28); }
+.product-icon.green { background: linear-gradient(135deg, #42be65, #198038); }
+.product-icon.cyan { background: linear-gradient(135deg, #33b1ff, #0072c3); }
+.product-icon.magenta { background: linear-gradient(135deg, #ee5396, #9f1853); }
+
+/* Commercial Badges */
+.product-card-badges { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.commercial-badge { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.32px; padding: 2px 6px; border-radius: 2px; white-space: nowrap; }
+.badge-trial { background: #defbe6; color: #0e6027; }
+.badge-buy { background: var(--cds-tag-blue); color: #0043ce; }
+.badge-payg { background: var(--cds-tag-teal); color: #005d5d; }
+.badge-enterprise { background: var(--cds-tag-purple); color: #6929c4; }
+
+.product-card-category { font-size: var(--cds-label-01); color: var(--cds-text-helper); text-transform: uppercase; letter-spacing: 0.32px; margin-bottom: var(--cds-spacing-02); }
+.product-card h3 { font-size: var(--cds-heading-03); font-weight: 600; margin-bottom: var(--cds-spacing-03); line-height: 1.3; }
+.product-card p { font-size: var(--cds-body-01); color: var(--cds-text-secondary); line-height: 1.5; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Card Footer: Pricing + Deployment + CTA */
+.product-card-footer { margin-top: var(--cds-spacing-05); padding-top: var(--cds-spacing-05); border-top: 1px solid var(--cds-border-subtle-00); }
+
+.product-card-pricing { font-size: var(--cds-body-01); margin-bottom: var(--cds-spacing-03); }
+.product-card-pricing .from { font-size: var(--cds-label-01); color: var(--cds-text-helper); }
+.product-card-pricing strong { font-size: var(--cds-heading-02); }
+.product-card-pricing .period { color: var(--cds-text-secondary); }
+.product-card-pricing .annual-note { font-size: var(--cds-label-01); color: var(--cds-support-success); font-weight: 600; display: none; }
+.product-card-pricing .annual-note.visible { display: inline; }
+
+.product-card-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--cds-spacing-03); }
+
+.product-card-tags { display: flex; gap: var(--cds-spacing-02); flex-wrap: wrap; }
+.cds-tag-sm { display: inline-flex; align-items: center; padding: 0 6px; border-radius: 24px; font-size: 11px; height: 18px; white-space: nowrap; }
+
+.product-card-cta { font-size: var(--cds-body-01); color: var(--cds-link-primary); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.product-card-cta:hover { text-decoration: underline; color: var(--cds-link-primary-hover); }
+.product-card-cta:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: 2px; }
+.product-card-cta svg { width: 14px; height: 14px; fill: currentColor; }
+
+/* Merchandising Banner */
+.merch-banner { background: linear-gradient(135deg, #001d6c 0%, #0f62fe 100%); color: white; padding: var(--cds-spacing-07); margin-bottom: 1px; display: grid; grid-template-columns: 1fr auto; gap: var(--cds-spacing-07); align-items: center; }
+@media (max-width: 672px) { .merch-banner { grid-template-columns: 1fr; } }
+.merch-banner h2 { font-size: var(--cds-heading-04); font-weight: 300; margin-bottom: var(--cds-spacing-03); }
+.merch-banner p { font-size: var(--cds-body-01); opacity: 0.8; max-width: 500px; }
+.merch-cta { display: inline-flex; align-items: center; gap: var(--cds-spacing-03); background: white; color: var(--cds-text-primary); padding: calc(0.675rem - 3px) 16px; font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); font-weight: 400; border: none; cursor: pointer; text-decoration: none; min-height: 40px; transition: background 0.11s; }
+.merch-cta:hover { background: #e8e8e8; }
+.merch-cta:focus-visible { outline: 2px solid white; outline-offset: -2px; }
+.merch-cta svg { fill: currentColor; width: 16px; height: 16px; }
+
+/* Pagination */
+.cds-pagination { display: flex; align-items: center; justify-content: space-between; padding: var(--cds-spacing-05); background: var(--cds-layer-01); border-top: 1px solid var(--cds-border-subtle-00); margin-top: var(--cds-spacing-07); font-size: var(--cds-body-01); flex-wrap: wrap; gap: var(--cds-spacing-04); }
+.pagination-left { display: flex; align-items: center; gap: var(--cds-spacing-05); color: var(--cds-text-secondary); }
+.pagination-left select { appearance: none; background: transparent; border: none; border-bottom: 1px solid var(--cds-border-strong-01); padding: var(--cds-spacing-02) var(--cds-spacing-05) var(--cds-spacing-02) var(--cds-spacing-03); font-family: 'IBM Plex Sans', sans-serif; font-size: var(--cds-body-01); cursor: pointer; }
+.pagination-right { display: flex; align-items: center; gap: 0; }
+.pagination-right span { padding: 0 var(--cds-spacing-05); color: var(--cds-text-secondary); }
+.page-btn { width: 40px; height: 40px; background: transparent; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.11s; }
+.page-btn:hover { background: var(--cds-background-hover); }
+.page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.page-btn:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+.page-btn svg { fill: var(--cds-icon-primary); width: 16px; height: 16px; }
+
+/* Focus states */
+*:focus-visible { outline: 2px solid var(--cds-focus); outline-offset: -2px; }
+</style>
+</head>
+<body>
+
+<!-- Masthead -->
+<header class="ibm-masthead" role="banner">
+  <div class="ibm-logo"><svg viewBox="0 0 44 16" xmlns="http://www.w3.org/2000/svg" aria-label="IBM"><path d="M0 0h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 2.6h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM2.1 5.2h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM2.1 7.8h2.8v1.5H2.1zm8.3 0h6.3v1.5h-6.3zM0 10.4h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM0 13h6.985v1.5H0zm8.3 0h10.4v1.5H8.3zM26 0h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 2.6h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM28.1 5.2h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM28.1 7.8h2.8v1.5h-2.8zm9.55 0h6.35v1.5h-6.35zM26 10.4h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35zM26 13h6.985v1.5H26zm9.65 0h8.35v1.5h-8.35z"/></svg></div>
+  <nav class="masthead-nav" aria-label="Main navigation">
+    <a href="#">Products</a><a href="#" class="active">Catalog</a><a href="#">Solutions</a><a href="#">Consulting</a><a href="#">Support</a>
+  </nav>
+  <div class="masthead-right">
+    <button class="icon-btn" aria-label="Search"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M29 27.586l-7.552-7.552a11.018 11.018 0 10-1.414 1.414L27.586 29zM4 13a9 9 0 119 9 9.01 9.01 0 01-9-9z"/></svg></button>
+    <button class="icon-btn" aria-label="Account"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M16 4a5 5 0 11-5 5 5 5 0 015-5m0-2a7 7 0 107 7 7 7 0 00-7-7zM26 30h-2v-5a5 5 0 00-5-5h-6a5 5 0 00-5 5v5H6v-5a7 7 0 017-7h6a7 7 0 017 7z"/></svg></button>
+    <button class="icon-btn" aria-label="Cart"><svg width="20" height="20" viewBox="0 0 32 32" fill="currentColor"><path d="M29.734 8.012a1 1 0 00-.777-.373H7.22l-.504-2.515A2.004 2.004 0 004.757 3.5H2v2h2.757l3.564 17.812A2.004 2.004 0 0010.28 25h13.413a2.003 2.003 0 001.959-1.594L28.963 10H22V8h6.957a1 1 0 00.777-.988zM23.693 23H10.28L7.62 9.639h20.137z"/><circle cx="12" cy="28" r="2"/><circle cx="22" cy="28" r="2"/></svg></button>
+  </div>
+</header>
+
+<!-- Catalog Hero -->
+<section class="catalog-hero" aria-label="Product catalog search">
+  <div class="cds-grid">
+    <h1>IBM Product Catalog</h1>
+    <p>Explore 666+ products across AI, data, security, automation, and infrastructure. Find, try, and buy the tools your business needs.</p>
+    <div class="catalog-search">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M29 27.586l-7.552-7.552a11.018 11.018 0 10-1.414 1.414L27.586 29zM4 13a9 9 0 119 9 9.01 9.01 0 01-9-9z"/></svg>
+      <input type="search" placeholder="Search products, solutions, or capabilities..." value="watsonx" aria-label="Search products">
+    </div>
+    <div class="search-count" role="status" aria-live="polite">Showing 8 results for "watsonx"</div>
+  </div>
+</section>
+
+<!-- Catalog Body -->
+<div class="catalog-layout">
+
+  <!-- Sidebar Filters -->
+  <aside class="catalog-sidebar" aria-label="Product filters">
+
+    <div class="filter-section">
+      <div class="filter-label" id="filter-category">Category</div>
+      <div role="group" aria-labelledby="filter-category">
+        <label class="cds-checkbox"><input type="checkbox" checked><span>AI &amp; Data</span><span class="count">186</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Security</span><span class="count">94</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Automation</span><span class="count">128</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Infrastructure</span><span class="count">142</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Business Operations</span><span class="count">72</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Integration</span><span class="count">44</span></label>
+      </div>
+    </div>
+
+    <!-- NEW: Commercial Type Filter -->
+    <div class="filter-section">
+      <div class="filter-label" id="filter-commercial">Commercial type</div>
+      <div role="group" aria-labelledby="filter-commercial">
+        <label class="cds-checkbox"><input type="checkbox"><span>Trial available</span><span class="count">142</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Buy online</span><span class="count">30</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Pay-as-you-go</span><span class="count">96</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Enterprise only</span><span class="count">156</span></label>
+      </div>
+    </div>
+
+    <div class="filter-section">
+      <div class="filter-label" id="filter-delivery">Delivery model</div>
+      <div role="group" aria-labelledby="filter-delivery">
+        <label class="cds-checkbox"><input type="checkbox" checked><span>SaaS</span><span class="count">312</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>On-premise</span><span class="count">198</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Hybrid</span><span class="count">87</span></label>
+      </div>
+    </div>
+
+    <!-- NEW: Deployment Filter -->
+    <div class="filter-section">
+      <div class="filter-label" id="filter-deployment">Deployment</div>
+      <div role="group" aria-labelledby="filter-deployment">
+        <label class="cds-checkbox"><input type="checkbox"><span>IBM Cloud</span><span class="count">412</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>AWS</span><span class="count">89</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Microsoft Azure</span><span class="count">76</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>On-prem</span><span class="count">48</span></label>
+      </div>
+    </div>
+
+    <!-- NEW: Pricing Tier Filter -->
+    <div class="filter-section">
+      <div class="filter-label" id="filter-pricing">Pricing tier</div>
+      <div role="group" aria-labelledby="filter-pricing">
+        <label class="cds-checkbox"><input type="checkbox"><span>Free / Trial</span><span class="count">142</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>&lt; $100 /month</span><span class="count">64</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>$100 – $500 /month</span><span class="count">88</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>$500+ /month</span><span class="count">196</span></label>
+        <label class="cds-checkbox"><input type="checkbox"><span>Enterprise / Custom</span><span class="count">156</span></label>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Content -->
+  <div class="catalog-content">
+
+    <!-- Active Filters -->
+    <div class="active-filters" aria-label="Active filters" role="region">
+      <button class="filter-tag" aria-label="Remove AI and Data filter">AI &amp; Data <span class="close"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"/></svg></span></button>
+      <button class="filter-tag" aria-label="Remove SaaS filter">SaaS <span class="close"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"/></svg></span></button>
+      <button class="clear-all">Clear all</button>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="catalog-toolbar">
+      <div class="results-count" role="status" aria-live="polite"><strong>8</strong> products found</div>
+      <div class="toolbar-right">
+        <!-- Revenue-Weighted Sort -->
+        <div class="cds-dropdown">
+          <select aria-label="Sort products">
+            <option selected>Sort by: Recommended</option>
+            <option>Sort by: Popular</option>
+            <option>Sort by: Buy online first</option>
+            <option>Sort by: A–Z</option>
+            <option>Sort by: Price (low–high)</option>
+          </select>
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 22L6 12l1.4-1.4 8.6 8.6 8.6-8.6L26 12z"/></svg>
+        </div>
+        <div class="cds-content-switcher" role="group" aria-label="View mode">
+          <button class="active" aria-label="Grid view" aria-pressed="true"><svg viewBox="0 0 32 32"><path d="M12 4H6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V6a2 2 0 00-2-2zm0 8H6V6h6zM26 4h-6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V6a2 2 0 00-2-2zm0 8h-6V6h6zM12 18H6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2v-6a2 2 0 00-2-2zm0 8H6v-6h6zM26 18h-6a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2v-6a2 2 0 00-2-2zm0 8h-6v-6h6z"/></svg></button>
+          <button aria-label="List view" aria-pressed="false"><svg viewBox="0 0 32 32"><path d="M4 6h24v2H4zM4 12h24v2H4zM4 18h24v2H4zM4 24h24v2H4z"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commitment Toggle -->
+    <div class="catalog-commitment-toggle" role="group" aria-label="Pricing commitment period">
+      <span class="toggle-label">Show pricing:</span>
+      <div class="toggle-group">
+        <button class="active" onclick="setCatalogCommitment('monthly', this)" aria-pressed="true">Monthly</button>
+        <button onclick="setCatalogCommitment('annual', this)" aria-pressed="false">Annual</button>
+      </div>
+      <span class="savings-label" id="catalog-savings-label" aria-live="polite"></span>
+    </div>
+
+    <!-- Merchandising Banner -->
+    <div class="merch-banner">
+      <div>
+        <h2>Try the watsonx AI platform free for 30 days</h2>
+        <p>Build, train, and deploy AI models with watsonx.ai, watsonx.data, and watsonx.governance — all integrated on a single platform.</p>
+      </div>
+      <a class="merch-cta" href="monday-pdp.html">Configure plan <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" role="list" aria-label="Product results">
+
+      <!-- Card 1: watsonx.data -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon blue"><svg viewBox="0 0 32 32"><path d="M27 5H5a3 3 0 00-3 3v16a3 3 0 003 3h22a3 3 0 003-3V8a3 3 0 00-3-3zm1 19a1 1 0 01-1 1H5a1 1 0 01-1-1V11h24z"/></svg></div>
+          <div class="product-card-badges">
+            <span class="commercial-badge badge-trial">Trial available</span>
+            <span class="commercial-badge badge-buy">Buy online</span>
+          </div>
+        </div>
+        <div class="product-card-category">watsonx · Select Focus</div>
+        <h3>watsonx.data</h3>
+        <p>Scale AI workloads for all your data with an open, hybrid, governed data lakehouse.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing">
+            <span class="from">From </span><strong class="monthly-price">$1.04</strong><span class="annual-price" style="display:none"><strong>$0.88</strong></span> <span class="period">/ RU-Hour</span>
+            <span class="annual-note" id="annual-note-1"> Save 15%</span>
+          </div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-blue);color:#0043ce">Azure</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for watsonx.data">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: watsonx.ai -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon purple"><svg viewBox="0 0 32 32"><path d="M16 2a14 14 0 1014 14A14 14 0 0016 2zm0 26a12 12 0 1112-12 12 12 0 01-12 12z"/><path d="M16 10a6 6 0 106 6 6 6 0 00-6-6zm0 10a4 4 0 114-4 4 4 0 01-4 4z"/></svg></div>
+          <div class="product-card-badges">
+            <span class="commercial-badge badge-trial">Trial available</span>
+            <span class="commercial-badge badge-buy">Buy online</span>
+          </div>
+        </div>
+        <div class="product-card-category">watsonx · eCOMM Focus</div>
+        <h3>watsonx.ai</h3>
+        <p>Train, validate, tune, and deploy foundation models and ML across any cloud.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing"><span class="from">From </span><strong>$0.60</strong> <span class="period">/ 1M tokens</span></div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for watsonx.ai">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: watsonx.governance -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon teal"><svg viewBox="0 0 32 32"><path d="M14 23h-2V9h-4l5-6 5 6h-4v14z"/><path d="M20 25h2V11h4l-5 6-5-6h4v14z"/></svg></div>
+          <div class="product-card-badges"><span class="commercial-badge badge-enterprise">Enterprise</span></div>
+        </div>
+        <div class="product-card-category">watsonx · Select Focus</div>
+        <h3>watsonx.governance</h3>
+        <p>Direct, manage, and monitor AI activities with trusted, transparent workflows.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing"><strong>Enterprise pricing</strong></div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-blue);color:#0043ce">Azure</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for watsonx.governance">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: watsonx Orchestrate -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon magenta"><svg viewBox="0 0 32 32"><path d="M16 4a12 12 0 1012 12A12 12 0 0016 4zm0 22a10 10 0 1110-10 10 10 0 01-10 10z"/><path d="M11 16a2 2 0 102-2 2 2 0 00-2 2zM19 16a2 2 0 102-2 2 2 0 00-2 2z"/></svg></div>
+          <div class="product-card-badges">
+            <span class="commercial-badge badge-trial">Trial available</span>
+            <span class="commercial-badge badge-buy">Buy online</span>
+          </div>
+        </div>
+        <div class="product-card-category">watsonx · Select Focus</div>
+        <h3>watsonx Orchestrate</h3>
+        <p>Automate tasks and workflows with AI assistants that combine GenAI and automation.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing">
+            <span class="from">From </span><strong class="monthly-price">$4.25</strong><span class="annual-price" style="display:none"><strong>$3.61</strong></span> <span class="period">/ user / month</span>
+            <span class="annual-note" id="annual-note-4"> Save 15%</span>
+          </div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-blue);color:#0043ce">Azure</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for watsonx Orchestrate">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5: Instana -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon cyan"><svg viewBox="0 0 32 32"><path d="M28 16A12 12 0 114 16a12 12 0 0124 0zM16 6a10 10 0 1010 10A10 10 0 0016 6z"/><path d="M16 12a4 4 0 104 4 4 4 0 00-4-4z"/></svg></div>
+          <div class="product-card-badges">
+            <span class="commercial-badge badge-trial">Trial available</span>
+            <span class="commercial-badge badge-payg">PAYG</span>
+          </div>
+        </div>
+        <div class="product-card-category">Observability · Select Focus</div>
+        <h3>Instana</h3>
+        <p>Enterprise observability and APM with automated monitoring across your full stack.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing">
+            <span class="from">From </span><strong class="monthly-price">$75</strong><span class="annual-price" style="display:none"><strong>$63.75</strong></span> <span class="period">/ host / month</span>
+            <span class="annual-note" id="annual-note-5"> Save 15%</span>
+          </div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-blue);color:#0043ce">Azure</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for Instana">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6: SPSS Statistics -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon green"><svg viewBox="0 0 32 32"><path d="M4 2v26a2 2 0 002 2h24v-2H6V2z"/><path d="M30 9h-7v2h3.59L19 18.59l-4.29-4.3a1 1 0 00-1.42 0L8 19.59 9.41 21 14 16.41l4.29 4.3a1 1 0 001.42 0L28 12.41V16h2z"/></svg></div>
+          <div class="product-card-badges">
+            <span class="commercial-badge badge-trial">Trial available</span>
+            <span class="commercial-badge badge-buy">Buy online</span>
+          </div>
+        </div>
+        <div class="product-card-category">Analytics · eCOMM Focus</div>
+        <h3>SPSS Statistics</h3>
+        <p>Powerful statistical analysis for business and research problems using predictive analytics.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing">
+            <span class="from">From </span><strong class="monthly-price">$99</strong><span class="annual-price" style="display:none"><strong>$84.15</strong></span> <span class="period">/ user / month</span>
+            <span class="annual-note" id="annual-note-6"> Save 15%</span>
+          </div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for SPSS Statistics">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7: MaaS360 -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon red"><svg viewBox="0 0 32 32"><path d="M26 14h-2v-2a6 6 0 00-12 0v2H10a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V16a2 2 0 00-2-2zm-8-2a4 4 0 018 0v2h-8zm8 14H10V16h16z"/></svg></div>
+          <div class="product-card-badges">
+            <span class="commercial-badge badge-trial">Trial available</span>
+            <span class="commercial-badge badge-buy">Buy online</span>
+          </div>
+        </div>
+        <div class="product-card-category">Security · eCOMM Focus</div>
+        <h3>MaaS360</h3>
+        <p>AI-driven unified endpoint management for smartphones, tablets, and IoT devices.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing">
+            <span class="from">From </span><strong class="monthly-price">$4</strong><span class="annual-price" style="display:none"><strong>$3.40</strong></span> <span class="period">/ device / month</span>
+            <span class="annual-note" id="annual-note-7"> Save 15%</span>
+          </div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-cyan);color:#003a6d">AWS</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for MaaS360">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8: Cognos Analytics -->
+      <article class="product-card" role="listitem">
+        <div class="product-card-header">
+          <div class="product-icon blue"><svg viewBox="0 0 32 32"><path d="M4 2v26a2 2 0 002 2h24v-2H6V2z"/><path d="M10 22h2V12h-2zm6 0h2V8h-2zm6 0h2V16h-2zm6 0h2V6h-2z"/></svg></div>
+          <div class="product-card-badges"><span class="commercial-badge badge-enterprise">Enterprise</span></div>
+        </div>
+        <div class="product-card-category">Analytics · eCOMM Focus</div>
+        <h3>Cognos Analytics</h3>
+        <p>AI-powered business intelligence for data exploration, dashboards, and enterprise insights.</p>
+        <div class="product-card-footer">
+          <div class="product-card-pricing"><strong>Enterprise pricing</strong></div>
+          <div class="product-card-meta">
+            <div class="product-card-tags">
+              <span class="cds-tag-sm" style="background:var(--cds-tag-green);color:#0e6027">SaaS</span>
+              <span class="cds-tag-sm" style="background:var(--cds-tag-purple);color:#6929c4">On-prem</span>
+            </div>
+            <a class="product-card-cta" href="monday-pdp.html" aria-label="View details for Cognos Analytics">View details <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10z"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Pagination -->
+    <nav class="cds-pagination" aria-label="Pagination">
+      <div class="pagination-left">
+        Items per page:
+        <select aria-label="Items per page"><option>10</option><option>25</option><option>50</option></select>
+        <span>1–8 of 8 items</span>
+      </div>
+      <div class="pagination-right">
+        <span>1 of 1 pages</span>
+        <button class="page-btn" disabled aria-label="Previous page"><svg viewBox="0 0 32 32"><path d="M20 24l1.414-1.414L14.828 16l6.586-6.586L20 8l-8 8 8 8z"/></svg></button>
+        <button class="page-btn" disabled aria-label="Next page"><svg viewBox="0 0 32 32"><path d="M12 8l-1.414 1.414L17.172 16l-6.586 6.586L12 24l8-8-8-8z"/></svg></button>
+      </div>
+    </nav>
+
+  </div>
+</div>
+
+<script>
+function setCatalogCommitment(type, btn) {
+  document.querySelectorAll('.catalog-commitment-toggle .toggle-group button').forEach(function(b) {
+    b.classList.remove('active');
+    b.setAttribute('aria-pressed', 'false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-pressed', 'true');
+
+  var isAnnual = type === 'annual';
+  document.querySelectorAll('.monthly-price').forEach(function(el) { el.style.display = isAnnual ? 'none' : ''; });
+  document.querySelectorAll('.annual-price').forEach(function(el) { el.style.display = isAnnual ? '' : 'none'; });
+  document.querySelectorAll('.annual-note').forEach(function(el) { el.classList.toggle('visible', isAnnual); });
+  document.getElementById('catalog-savings-label').textContent = isAnnual ? 'Save up to 15% with annual commitment' : '';
+}
+</script>
+</body>
+</html>
